@@ -5,8 +5,9 @@
 ///////////////////////
 
 $white: #ffffff
-$black: #444442
+$black: #686F72
 $blue: #4db4da
+$blue-d: #2585a9
 $yellow: #f3e933
 
 ///////////////////////
@@ -15,9 +16,10 @@ $yellow: #f3e933
 
 $base-color: $blue
 $main-color: $blue
-$accent-color: $yellow
+$accent-color: $white
 $text-color: $white
 $header-image: false
+$syntax-heighlight-color: $blue-d
 
 ///////////////////////
 // setup fonts
@@ -31,13 +33,13 @@ $header-image: false
   &.is-ja
     +sans-serif
   &.is-en
-    +tauri(700)
+    font-family: 'DIN Next W01 Medium'
 
 =main-bold-font
   &.is-ja
     +bold-ja
   &.is-en
-    +tauri(bold)
+    font-family: 'DIN Next W01 Medium'
 
 =site-title-font
   +main-bold-font

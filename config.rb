@@ -55,10 +55,19 @@ activate :blog do |blog|
   blog.default_extension = ".markdown"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
+  blog.permalink = "categories/{category}/{title}.html"
 
   blog.paginate = true
   blog.per_page = 10
   blog.page_link = "page/:num"
+
+  blog.custom_collections = {
+    category: {
+      link: '/categories/{category}.html',
+      template: 'category.html'
+    }
+  }
+
 end
 
 Slim::Engine.set_default_options :pretty => true

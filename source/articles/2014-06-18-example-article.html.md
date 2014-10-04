@@ -1,7 +1,7 @@
 ---
 title: Sample post
 date: 2014-06-18
-tags: misc
+category: blog
 ---
 
 Lorem は「おはじめなさい」すこし優しげに二番手の希望

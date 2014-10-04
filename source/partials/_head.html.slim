@@ -7,7 +7,7 @@ head
   = stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
   = javascript_include_tag  "//code.jquery.com/jquery-latest.min.js"
   = javascript_include_tag  "all"
-
+  = javascript_include_tag  "//fast.fonts.net/jsapi/0290bb7e-9812-426f-9c9d-43cc7d9e87ca.js"
   title
     | #{data.site.title}#{' - ' + current_article.title unless current_article.nil?}
   = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"

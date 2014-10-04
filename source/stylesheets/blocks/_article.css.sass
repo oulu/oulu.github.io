@@ -1,20 +1,12 @@
 .article
-  &.is-page
-    +rem('min-height', 460px)
-.article__wrapper
-  +relative
-.article__content
-  +rem('max-width', 640px)
-  float: right
-  +rem('padding-left', 24px)
-  +screen-xs
-    padding-left: 0
+  +rem('min-height', 460px)
 .article__header
   +rem('margin-bottom', 24px)
+  +top(-8px)
   +screen-xs
     +rem('margin-bottom', 8px)
 .article__title
-  +text-block(32px, 1.4, false, bold)
+  +text-block(48px, 1.4, false, bold)
   +bold-ja
   +screen-xs
     +text-block(20px, 1.3, 16px, bold)
@@ -34,7 +26,7 @@
 .article__created-at
   display: block
   +text-block(14px, 1, 32px, $fix-text-color, center)
-  +vertical-pd(5px)
+  +vertical-padding(5px)
   +border(all, 2px, solid, $fix-text-color)
   +top(9px)
   +nowrap
@@ -74,16 +66,19 @@
   >*:last-child
     margin-bottom: 0
   .highlight
-    @if luma-dark($base-color)
-      +rgba-background-inline(rgba(255 ,255 ,255 , (100 - luma($base-color))/400))
+    @if $syntax-heighlight-color
+      background-color: $syntax-heighlight-color
     @else
-      @if luma-dark($fix-text-color)
-        background-color: $fix-text-color
+      @if luma-dark($base-color)
+        +rgba-background-inline(rgba(255 ,255 ,255 , (100 - luma($base-color))/400))
       @else
         @if luma-dark($fix-text-color)
-          +rgba-background-inline(rgba(0 ,0 ,0 , luma($fix-text-color)/20))
+          background-color: $fix-text-color
         @else
-          +rgba-background-inline(rgba(0 ,0 ,0 , luma($base-color)/200))
+          @if luma-dark($fix-text-color)
+            +rgba-background-inline(rgba(0 ,0 ,0 , luma($fix-text-color)/20))
+          @else
+            +rgba-background-inline(rgba(0 ,0 ,0 , luma($base-color)/200))
   p
     +text-block($ms-base, 1.9, 1.6)
   +screen-xs
@@ -115,7 +110,7 @@
   img
     max-width: 100%
     display: block
-    +horizontal-mg-auto
+    +horizontal-margin-auto
     +rem('margin-bottom', 32px)
   blockquote
     +rem('padding', 12px 22px 12px 40px)
@@ -156,18 +151,17 @@
     +screen-xs
       +text-block(16px, 1.3, false, bold)
   >ul
-    +list(22px, 32px, fa, \f0da, 16px, 14px, 0, 7px)
+    +list(22px, 32px, fa, '\f0da', 16px, 14px, 0, 7px)
   >ol
     +list(22px, 32px, decimal, outside)
   li
     +text-block(16px, 1.8, .8)
-    +relative
     +screen-xs
       +text-block(14px, 1.8, .8)
     &:last-child
       margin-bottom: 0
     >ul
-      +list(22px, 32px, fa, \f111, 16px, 6px, 10px, 12px)
+      +list(22px, 32px, fa, '\f111', 16px, 6px, 10px, 12px)
     >ul,
     >ol
       +rem('margin-top', 12px)
@@ -175,19 +169,19 @@
   dl
     +rem('margin-bottom', 32px)
     +border(vertical, 1px, solid, $fix-text-color)
-    +vertical-pd(32px)
+    +vertical-padding(32px)
     @extend .row
-    +horizontal-mg(0)
+    +horizontal-margin(0)
     +screen-xs
-      +vertical-pd(24px)
+      +vertical-padding(24px)
       +border(vertical, 1px, dotted, $fix-text-color)
   dt
     +text-block(14px, 1.6, 8px, bold)
     +rem('margin-top', 16px)
-    @extend .col-sm-4
     +rem('padding-right', 8px)
+    @extend .col-sm-4
+    @extend .col-xs-12
     +screen-xs
-      @extend .col-xs-12
       padding: 0
     &:first-child
       margin-top: 0
@@ -200,8 +194,8 @@
   dd
     +text-block(14px, 1.6, 1)
     @extend .col-sm-8
+    @extend .col-xs-12
     +screen-xs
-      @extend .col-xs-12
       +text-block(12px, 1.6, 1)
       padding: 0
     &+dd

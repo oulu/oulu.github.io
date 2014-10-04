@@ -1,3 +1,5 @@
+$sub-width: 160px
+
 *::selection
   background: $fix-text-color
   color: $base-color
@@ -8,7 +10,7 @@
 .wrapper
   +rem('max-width', $wrapper-max-width)
   +box-sizing(border-box)
-  +horizontal-mg(auto)
+  +horizontal-margin(auto)
   +rem('padding-left', $wrapper-padding)
   +rem('padding-right', $wrapper-padding)
   clear: both
@@ -19,3 +21,12 @@ body
   background-color: $base-color
   a
     +transition(.2s)
+.body
+  +relative
+.main
+  +rem('padding-left', $sub-width + 48px)
+.sub
+  +rem('width', $sub-width)
+  +absolute(left 0, top 0)
+  +border(right, 1px, solid, $text-color)
+  height: 100%

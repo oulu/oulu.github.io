@@ -17,20 +17,19 @@ gem "middleman-blog"
 
 gem "i18n", "0.6.9"
 
-gem "sass", "~> 3.3.8"
-gem "compass", "~> 1.0.0.alpha.19"
+gem "sass", "~> 3.4.5"
+gem "compass", "~> 1.0.1"
 gem "slim"
 gem 'middleman-minify-html'
 gem "middleman-syntax"
 gem "redcarpet"
 
 # Use oulu
-#gem 'middleman-oulu', path: '../middleman-oulu'
-gem 'middleman-oulu', '~> 0.4.10', github: 'oulu/middleman-oulu'
+gem 'middleman-oulu', path: '../middleman-oulu'
+#gem 'middleman-oulu', '~> 0.4.18', github: 'oulu/middleman-oulu'
 
 gem "ceaser-easing"
 gem "compass-rgbapng"
 gem "modular-scale"
 gem "SassyLists"
-gem "toolkit"
 gem "sassy-maps"
