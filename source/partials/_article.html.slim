@@ -1,9 +1,10 @@
 article.article
   .article__header
     h1.article__title= link_to article.title, article, class: "article__title-link #{lang_class(article.title)}"
-  p.article__created-at class="#{lang_class(article.date.strftime('%Y/%m/%d'))}"
-    | last update
-    = article.date.strftime('%Y/%m/%d')
+    - if article.data.last_update
+      p.article__last-update.is-en
+        span.is-label last update
+        span.is-date= article.data.last_update.strftime('%Y/%m/%d')
   .article__body
     = article.body
   - if data.site.disqus

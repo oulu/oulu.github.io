@@ -1,11 +1,12 @@
 header.header
-  .wrapper.header__wrapper
-    h1.header__site-title
-      = link_to "/", data: {text: "#{data.site.title}"}, class: ("header__site-title-link #{lang_class(data.site.title)} #{text_size(data.site.title)} #{glitch}") do
-        = image_tag('logo.png', class: "header__site-title-logo")
-        = data.site.title
-    = link_to "", class: "header__github-link" do
-      i.fa.fa-github
-    = link_to "#", class: "header__sass-link" do
-      = image_tag('sass.png', class: "header__sass-logo")
-      span.header__sass-title.is-en Sass tools
+  .wrapper
+    .header__wrapper
+      h1.header__site-title
+        = link_to "/", data: {text: "#{data.site.title}"}, class: ("header__site-title-link #{lang_class(data.site.title)} #{text_size(data.site.title)} #{glitch}") do
+          = image_tag('logo.png', class: "header__site-title-logo")
+          = data.site.title
+      = link_to "", class: "header__github-link" do
+        i.fa.fa-github
+      = link_to "#", class: "header__sass-link" do
+        = image_tag('sass.png', class: "header__sass-logo")
+        span.header__sass-title.is-en Sass tools

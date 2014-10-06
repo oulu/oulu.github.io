@@ -1,6 +1,6 @@
 ---
 title: Sample post
-date: 0006-01-01
+last_update: 2014-10-06
 tags: misc
 category: helpers
 ---
