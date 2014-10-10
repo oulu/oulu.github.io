@@ -117,6 +117,12 @@ configure :build do
 end
 
 helpers do
+  def index?
+    if current_page.path == 'index.html'
+      return true
+    end
+  end
+
   def articles?
     current_article.nil?
   end

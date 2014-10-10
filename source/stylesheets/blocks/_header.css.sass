@@ -8,9 +8,7 @@ body
     overflow: hidden
 .header
   +box-sizing(border-box)
-  +rem('height', 360px)
   background-color: $main-color
-  +rem('margin-bottom', 32px)
   @if header-image
     +bg($main-color, '#{$header-image}', center center, false, scroll, cover)
   +screen-xs
@@ -18,6 +16,8 @@ body
     +rem('margin-bottom', 16px)
 .header__wrapper
   +rem('padding-top', 144px)
+  +rem('height', 400px)
+  +box-sizing(border-box)
   +transition(.1s)
   +relative
   +screen-xs
@@ -28,9 +28,11 @@ body
       +rem('padding-bottom', 48px)
 .header__site-title
   text-align: center
+  +rem('margin-bottom', 8px)
 .header__site-title-link
   text-decoration: none
   +site-title-font
+  +rem('letter-spacing', 1px)
   color: $header-text-color
   &.is-sm
     +text-block(72px, 1.4)
@@ -50,12 +52,18 @@ body
     &.is-xl
       +text-block(12px, 1.3)
 .header__site-title-logo
-  +rem('width', 36px)
+  +rem('width', 48px)
   height: auto
-  +top(-32px)
-  +rem('margin-right', 16px)
+  +top(-26px)
+  +rem('margin-right', 8px)
+
+.header__site-read-line
+  +text-block(24px, 1, false, center)
+  +main-font
+  +rem('letter-spacing', 1px)
+
 .header__sass-link
-  +absolute(left, 0, top, 16px)
+  +absolute(left, 0, bottom, 16px)
   +block-link
   +rem('width', 60px)
 .header__sass-logo
@@ -65,8 +73,8 @@ body
 .header__sass-title
   +text-block(12px, 1, false, rgba($text-color, .4), center)
   display: block
-  &.is-en
-    +main-font
+  +main-font
+
 .header__github-link
   $size: 56px
   $motion-size: 16px

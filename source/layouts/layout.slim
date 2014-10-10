@@ -2,7 +2,8 @@ doctype html
 html
   = partial 'partials/head'
   body
-    = partial 'partials/header'
+    - if index?
+      = partial 'partials/header'
     = partial 'partials/global_nav'
     .wrapper
       .body
@@ -18,9 +19,10 @@ html
             = partial("partials/article", locals: {article: current_article})
           - else
             = yield
-        .sub
-          nav.local-nav
-            ul.local-nav__items
-              li.local-nav__item
-                = link_to "aaaaaaaaaa", "#", class: "local-nav"
+        - if not index?
+          .sub
+            nav.local-nav
+              ul.local-nav__items
+                li.local-nav__item
+                  = link_to "aaaaaaaaaa", "#", class: "local-nav"
     = partial 'partials/footer'

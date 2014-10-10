@@ -1,6 +1,6 @@
 ---
 title: Sample post
-date: 2014-06-18
+last_update: 2014-10-06
 category: blog
 ---
 

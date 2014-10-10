@@ -1,22 +1,28 @@
 i.fa.fa-bars.open-global-nav-icon.js-open-slide-nav.visible-xs-block
-nav.global-nav.js-slide-nav
+nav.global-nav.js-slide-nav class=('is-index' if index?)
   i.fa.fa-times.js-open-slide-nav.visible-xs-block.global-nav__close-icon
-  .global-nav__wrapper.wrapper
-    ul.global-nav__items
-      li.global-nav__item
-        = link_to "Install", "/pages/install.html", class: ("global-nav__link #{is_current_page?('pages/install.html')} #{lang_class('Install')}")
-      li.global-nav__item
-        = link_to "Functions", category_path('functions'), class: ("global-nav__link #{is_current_page?('articles/categories/functions.html')} #{is_current_group?('categories/functions')} #{lang_class('Tags')}")
-      li.global-nav__item
-        = link_to "Mixins", category_path('mixins'), class: ("global-nav__link #{is_current_page?('articles/categories/mixins.html')} #{is_current_group?('categories/mixins')} #{lang_class('Tags')}")
-      li.global-nav__item
-        = link_to "Helpers", category_path('helpers'), class: ("global-nav__link #{is_current_page?('articles/categories/helpers.html')} #{is_current_group?('categories/helpers')} #{lang_class('Tags')}")
-      li.global-nav__item
-        = link_to "Blog", category_path('blog'), class: ("global-nav__link #{is_current_page?('articles/categories/blog.html')} #{is_current_group?('articles/blog')} #{lang_class('Blog')}")
-      li.global-nav__item
-        = link_to "Contribute", "/pages/contribute.html", class: ("global-nav__link #{is_current_page?('pages/contribute.html')} #{lang_class('Contribute')}")
-      //
+  .wrapper
+    .global-nav__wrapper
+      - if not index?
+        h1.global-nav__site-title
+          = link_to "/", data: {text: "#{data.site.title}"}, class: ("global-nav__site-title-link #{lang_class(data.site.title)} #{text_size(data.site.title)} #{glitch}") do
+            = image_tag('logo.png', class: "is-image")
+            span.is-title= data.site.title
+      ul.global-nav__items class=('is-index' if index?)
         li.global-nav__item
-          = link_to "Tags", "/pages/tags.html", class: ("global-nav__link #{is_current_page?('pages/tags.html')} #{is_current_group?('articles/tags')}  #{lang_class('Tags')}")
+          = link_to "Install", "/pages/install.html", class: ("global-nav__link #{is_current_page?('pages/install.html')} #{lang_class('Install')}")
         li.global-nav__item
-            = link_to "Archives", "/pages/archives.html", class: ("global-nav__link #{is_current_page?('pages/archives.html')} #{is_current_archives?} #{lang_class('Archives')}")
+          = link_to "Functions", category_path('functions'), class: ("global-nav__link #{is_current_page?('articles/categories/functions.html')} #{is_current_group?('categories/functions')} #{lang_class('Tags')}")
+        li.global-nav__item
+          = link_to "Mixins", category_path('mixins'), class: ("global-nav__link #{is_current_page?('articles/categories/mixins.html')} #{is_current_group?('categories/mixins')} #{lang_class('Tags')}")
+        li.global-nav__item
+          = link_to "Helpers", category_path('helpers'), class: ("global-nav__link #{is_current_page?('articles/categories/helpers.html')} #{is_current_group?('categories/helpers')} #{lang_class('Tags')}")
+        li.global-nav__item
+          = link_to "Blog", category_path('blog'), class: ("global-nav__link #{is_current_page?('articles/categories/blog.html')} #{is_current_group?('articles/blog')} #{lang_class('Blog')}")
+        li.global-nav__item
+          = link_to "Contribute", "/pages/contribute.html", class: ("global-nav__link #{is_current_page?('pages/contribute.html')} #{lang_class('Contribute')}")
+        //
+          li.global-nav__item
+            = link_to "Tags", "/pages/tags.html", class: ("global-nav__link #{is_current_page?('pages/tags.html')} #{is_current_group?('articles/tags')}  #{lang_class('Tags')}")
+          li.global-nav__item
+              = link_to "Archives", "/pages/archives.html", class: ("global-nav__link #{is_current_page?('pages/archives.html')} #{is_current_archives?} #{lang_class('Archives')}")
