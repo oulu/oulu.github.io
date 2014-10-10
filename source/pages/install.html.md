@@ -15,3 +15,12 @@ gem 'oulu-rails'
 `$ bundle` コマンドを打ちます。
 
 ## middleman で Oulu を使う
+
+
+Gemfile に以下を記入して、
+
+```ruby
+gem 'middleman-oulu'
+```
+
+`$ bundle` コマンドを打ちます。
