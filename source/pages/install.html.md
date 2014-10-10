@@ -14,7 +14,4 @@ gem 'oulu-rails'
 
 `$ bundle` コマンドを打ちます。
 
-
-
-
 ## middleman で Oulu を使う
