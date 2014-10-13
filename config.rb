@@ -55,7 +55,7 @@ activate :blog do |blog|
   blog.default_extension = ".markdown"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
-  blog.permalink = "categories/{category}/{title}.html"
+  blog.permalink = "{category}/{title}.html"
 
   blog.paginate = true
   blog.per_page = 10
@@ -63,7 +63,7 @@ activate :blog do |blog|
 
   blog.custom_collections = {
     category: {
-      link: '/categories/{category}.html',
+      link: '{category}.html',
       template: 'category.html'
     }
   }
@@ -91,11 +91,8 @@ end
 # end
 
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
-
 
 # Build-specific configuration
 configure :build do
@@ -127,12 +124,32 @@ helpers do
     current_article.nil?
   end
 
+  def category?
+    #["functions", "mixins", "helpers", "blog"].each do |category|
+    #    current_page.url.include?("#{category}.html")
+    #  end
+    if current_page.url.include?('mixins.html') || current_page.url.include?('functions.html') || current_page.url.include?('helpers.html') || current_page.url.include?('blog.html')
+      return true
+    else
+      return false
+    end
+  end
+
   def page?
     current_page.url.include?('pages')
   end
 
+  def local_nav?
+    if index? || category? || page?
+      return false
+    else
+      return true
+    end
+  end
+
+
   def nav_page?
-    current_page.url.include?('archives.html') or current_page.url.include?('tags.html')
+    current_page.url.include?('archives.html') || current_page.url.include?('tags.html')
   end
 
   def lang_class(text)

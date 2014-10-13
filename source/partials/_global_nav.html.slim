@@ -21,6 +21,8 @@ nav.global-nav.js-slide-nav class=('is-index' if index?)
           = link_to "Blog", category_path('blog'), class: ("global-nav__link #{is_current_page?('articles/categories/blog.html')} #{is_current_group?('articles/blog')} #{lang_class('Blog')}")
         li.global-nav__item
           = link_to "Contribute", "/pages/contribute.html", class: ("global-nav__link #{is_current_page?('pages/contribute.html')} #{lang_class('Contribute')}")
+        li.global-nav__item
+          = link_to "Demo", "/pages/demo.html", class: ("global-nav__link #{is_current_page?('pages/demo.html')} #{lang_class('Demo')}")
         //
           li.global-nav__item
             = link_to "Tags", "/pages/tags.html", class: ("global-nav__link #{is_current_page?('pages/tags.html')} #{is_current_group?('articles/tags')}  #{lang_class('Tags')}")
