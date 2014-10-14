@@ -24,7 +24,8 @@ body
 .body
   +relative
 .main
-  +rem('padding-left', $sub-width + 48px)
+  &.has-local-nav
+    +rem('padding-left', $sub-width + 48px)
 .sub
   +rem('width', $sub-width)
   +absolute(left 0, top 0)

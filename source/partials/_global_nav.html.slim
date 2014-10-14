@@ -10,15 +10,15 @@ nav.global-nav.js-slide-nav class=('is-index' if index?)
             span.is-title= data.site.title
       ul.global-nav__items class=('is-index' if index?)
         li.global-nav__item
-          = link_to "Install", "/pages/install.html", class: ("global-nav__link #{is_current_page?('pages/install.html')} #{lang_class('Install')}")
+          = link_to "Install", "/pages/install.html", class: ("global-nav__link #{is_current_page?('install.html')} #{lang_class('Install')}")
         li.global-nav__item
-          = link_to "Functions", category_path('functions'), class: ("global-nav__link #{is_current_page?('articles/categories/functions.html')} #{is_current_group?('categories/functions')} #{lang_class('Tags')}")
+          = link_to "Functions", category_path('functions'), class: ("global-nav__link #{is_current_page?('articles/functions.html')} #{is_current_group?('functions')} #{lang_class('Tags')}")
         li.global-nav__item
-          = link_to "Mixins", category_path('mixins'), class: ("global-nav__link #{is_current_page?('articles/categories/mixins.html')} #{is_current_group?('categories/mixins')} #{lang_class('Tags')}")
+          = link_to "Mixins", category_path('mixins'), class: ("global-nav__link #{is_current_page?('articles/mixins.html')} #{is_current_group?('mixins')} #{lang_class('Tags')}")
         li.global-nav__item
-          = link_to "Helpers", category_path('helpers'), class: ("global-nav__link #{is_current_page?('articles/categories/helpers.html')} #{is_current_group?('categories/helpers')} #{lang_class('Tags')}")
+          = link_to "Helpers", category_path('helpers'), class: ("global-nav__link #{is_current_page?('articles/helpers.html')} #{is_current_group?('helpers')} #{lang_class('Tags')}")
         li.global-nav__item
-          = link_to "Blog", category_path('blog'), class: ("global-nav__link #{is_current_page?('articles/categories/blog.html')} #{is_current_group?('articles/blog')} #{lang_class('Blog')}")
+          = link_to "Blog", category_path('blog'), class: ("global-nav__link #{is_current_page?('articles/blog.html')} #{is_current_group?('articles/blog')} #{lang_class('Blog')}")
         li.global-nav__item
           = link_to "Contribute", "/pages/contribute.html", class: ("global-nav__link #{is_current_page?('pages/contribute.html')} #{lang_class('Contribute')}")
         li.global-nav__item

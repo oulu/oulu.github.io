@@ -2,9 +2,6 @@
 pageable: true
 per_page: 20
 ---
-header.page__header
-  h1.page__title.page-header__title class= "#{category.ascii_only? ? 'is-en' : 'is-ja'}"
-    = category.capitalize
 ul.articles
   - page_articles.each_with_index do |article, i|
     = partial("partials/articles_article", locals: {article: article})

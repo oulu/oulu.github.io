@@ -135,6 +135,38 @@ helpers do
     end
   end
 
+  def in_mixins?
+    if current_page.url.include?('mixins')
+      return true
+    else
+      return false
+    end
+  end
+
+  def in_functions?
+    if current_page.url.include?('functions')
+      return true
+    else
+      return false
+    end
+  end
+
+  def in_helpers?
+    if current_page.url.include?('helpers')
+      return true
+    else
+      return false
+    end
+  end
+
+  def in_blog?
+    if current_page.url.include?('blog')
+      return true
+    else
+      return false
+    end
+  end
+
   def page?
     current_page.url.include?('pages')
   end
@@ -146,7 +178,6 @@ helpers do
       return true
     end
   end
-
 
   def nav_page?
     current_page.url.include?('archives.html') || current_page.url.include?('tags.html')
@@ -173,11 +204,10 @@ helpers do
   end
 
   def is_current_page?(url)
-    case current_page.path == url
+    case current_page.url.include?(url)
     when true
       return 'is-current'
     end
-    false
   end
 
   def is_current_group?(url)

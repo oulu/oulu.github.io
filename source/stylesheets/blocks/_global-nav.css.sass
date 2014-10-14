@@ -1,8 +1,12 @@
 .global-nav
-  +rem('margin-bottom', 72px)
-  +border(bottom, 1px, solid, $text-color)
   &.is-index
-    +border(top, 1px, solid, $text-color)
+    +rem('margin-bottom', 72px)
+    text-align: center
+    .global-nav__item
+      &:first-child
+        .global-nav__link
+          padding-left: 0
+
 .global-nav__wrapper
   +relative
 .global-nav__site-title
@@ -36,6 +40,6 @@
     background-color: $accent-color
     color: $main-color
     +relative
-    +baloon-tale(top, $base-color, 6px, 8px, false)
+    +baloon-tale(top, #2b8db7, 6px, 8px, false)
     &:before
       +rem('bottom', -1px)

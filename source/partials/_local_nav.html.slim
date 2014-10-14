@@ -1,0 +1,14 @@
+- blog.articles.sort_by(&:date).each do |article|
+  - if in_mixins?
+    - if article.data.category.include?('mixins')
+      li.local-nav__item
+        = link_to article.data.title, article, class: "local-nav__link #{is_current_page?(article.url)}"
+  - elsif in_functions?
+    - if article.data.category.include?('functions')
+      = article.data.title
+  - elsif in_helpers?
+    - if article.data.category.include?('helpers')
+      = article.data.title
+  - elsif in_blog?
+    - if article.data.category.include?('blog')
+      = article.data.title
