@@ -1,0 +1,8 @@
+header.title
+  .wrapper.title__wrapper
+    - if page?
+      h1.title__title class="#{lang_class(current_page.data.title)}" = current_page.data.title
+    - elsif category?
+      h1.title__title class="#{lang_class(articles.category)}" = current_articles.category.capitalize
+    - elsif current_article
+      h1.title__title= link_to current_article.data.category.capitalize, current_article.url, class: "article__title-link #{lang_class(current_article.data.category)}"
