@@ -1,18 +1,13 @@
 body
   overflow-x: hidden
   width: 100%
-  +transition(.2s)
-  background-color: $base-color
+  +transition(.1s)
   &.is-slided
     +rem('margin-left', 300px)
     overflow: hidden
 .header
   +box-sizing(border-box)
-  background-color: $main-color
-  @if header-image
-    +bg($main-color, '#{$header-image}', center center, false, scroll, cover)
   +screen-xs
-    height: auto
     +rem('margin-bottom', 16px)
 .header__wrapper
   +rem('padding-top', 144px)
@@ -22,10 +17,28 @@ body
   +relative
   +screen-xs
     +rem('padding-top', 48px)
-    @if $base-color == $main-color
-      +rem('padding-bottom', 36px)
-    @else
-      +rem('padding-bottom', 48px)
+    +rem('padding-bottom', 48px)
+.header__header
+  +rem('height', 40px)
+.header__header-wrapper
+  +relative
+.header__version-link
+  +text-block(14px, 40px, false, rgba($text-color, .6))
+  text-decoration: none
+  +inline-block
+  +top(4px)
+  +rem('padding-left', 36px)
+  +main-font
+  &:hover
+    color: $text-color
+  .is-label
+    &:after
+      content: ':'
+      +horizontal-margin(4px)
+  .is-number
+    +rem('font-size', 18px)
+.header__body
+  background-color: $main-color
 .header__site-title
   text-align: center
   +rem('margin-bottom', 8px)

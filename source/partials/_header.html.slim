@@ -1,13 +1,18 @@
 header.header
-  .wrapper
-    .header__wrapper
+  .header__header
+    .header__header-wrapper.wrapper
+      = link_to "", class: "header__github-link" do
+        i.fa.fa-github
+      = link_to "", class: "header__version-link is-en" do
+        span.is-label Version
+        span.is-number 0.4.19
+  .header__body
+    .wrapper.header__wrapper
       h1.header__site-title
         = link_to "/", data: {text: "#{data.site.title}"}, class: ("header__site-title-link #{lang_class(data.site.title)} #{text_size(data.site.title)} #{glitch}") do
           = image_tag('logo.png', class: "header__site-title-logo")
           = data.site.title
       h2.header__site-read-line.is-en A mixin library for Sass.
-      = link_to "", class: "header__github-link" do
-        i.fa.fa-github
       = link_to "#", class: "header__sass-link" do
         = image_tag('sass.png', class: "header__sass-logo")
         span.header__sass-title.is-en Sass tools

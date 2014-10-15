@@ -3,7 +3,6 @@ html
   = partial 'partials/head'
   body
     - if index?
-      .version
       = partial 'partials/header'
     - else
       = partial 'partials/global_nav'
@@ -15,7 +14,7 @@ html
           - elsif category?
             h1.title__title class="#{lang_class(category)}" = category.capitalize
           - elsif current_article
-            h1.title__title= link_to current_article.data.category.capitalize, current_article.url, class: "article__title-link #{lang_class(current_article.data.category)}"
+            h1.title__title class="#{lang_class(current_article.data.category)}" = current_article.data.category.capitalize
     .wrapper
       .body
         main.main class=(local_nav? ? 'has-local-nav':'')

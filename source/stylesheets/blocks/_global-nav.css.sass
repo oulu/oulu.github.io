@@ -4,6 +4,7 @@
     padding-top: 0
     +rem('margin-bottom', 72px)
     text-align: center
+    background-color: $blue-ll
     .global-nav__item
       .global-nav__link
         +text-block(22px, 48px, 0, $text-color)
@@ -41,9 +42,9 @@
   +main-font
   +rem('letter-spacing', 1px)
   &:hover
-    color: rgba($text-color, .7)
-  &.is-current
     color: $text-color
+  &.is-current
+    color: #97EBFA
     +relative
     +baloon-tale(top, $main-color, 6px, 8px, false)
     &:before
