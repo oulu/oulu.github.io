@@ -1,5 +1,6 @@
 .global-nav
   +rem('padding-top', 10px)
+  background-color: $blue-ll
   &.is-index
     padding-top: 0
     +rem('margin-bottom', 72px)
@@ -7,7 +8,7 @@
     background-color: $blue-ll
     .global-nav__item
       .global-nav__link
-        +text-block(22px, 48px, 0, $text-color)
+        +text-block(22px 48px 0, $reverse-text-color)
       &:first-child
         .global-nav__link
           padding-left: 0
@@ -15,17 +16,17 @@
 .global-nav__wrapper
   +relative
 .global-nav__site-title
-  +absolute(left, 0, top, -4px)
+  +absolute(left 0, top -4px)
 .global-nav__site-title-link
   +block-link
-  +text-block(32px, 54px, 0, $text-color)
+  +text-block(32px 54px 0, $reverse-text-color)
   +main-font
   +rem('padding-left', 28px)
   +rem('letter-spacing', 1px)
   .is-image
     width: 20px
     height: auto
-    +absolute(left, 0, top, 10px)
+    +absolute(left 0, top 10px)
   .is-title
     +top(0px)
 .global-nav__items
@@ -36,16 +37,16 @@
   +inline-block(bottom)
 .global-nav__link
   +block-link
-  +text-block(18px, 48px, 0, rgba($text-color, .4))
+  +text-block(18px 48px 0, rgba($reverse-text-color, .4))
   +horizontal-padding(18px)
   +box-sizing(border-box)
   +main-font
   +rem('letter-spacing', 1px)
   &:hover
-    color: $text-color
+    color: $reverse-text-color
   &.is-current
-    color: #97EBFA
+    color: $yellow
     +relative
-    +baloon-tale(top, $main-color, 6px, 8px, false)
+    +balloon-tale(top $main-color 6px 8px)
     &:before
       +rem('bottom', -1px)

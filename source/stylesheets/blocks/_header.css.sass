@@ -23,7 +23,7 @@ body
 .header__header-wrapper
   +relative
 .header__version-link
-  +text-block(14px, 40px, false, rgba($text-color, .6))
+  +text-block(14px 40px, rgba($text-color, .6))
   text-decoration: none
   +inline-block
   +top(4px)
@@ -48,34 +48,34 @@ body
   +rem('letter-spacing', 1px)
   color: $header-text-color
   &.is-sm
-    +text-block(72px, 1.4)
+    +text-block(72px 1.4)
   &.is-md
-    +text-block(64px, 1.4)
+    +text-block(64px 1.4)
   &.is-lg
-    +text-block(56px, 1.4)
+    +text-block(56px 1.4)
   &.is-xl
-    +text-block(40px, 1.4)
+    +text-block(40px 1.4)
   +screen-xs
     &.is-sm
-      +text-block(48px, 1.3)
+      +text-block(48px 1.3)
     &.is-md
-      +text-block(36px, 1.3)
+      +text-block(36px 1.3)
     &.is-lg
-      +text-block(24px, 1.3)
+      +text-block(24px 1.3)
     &.is-xl
-      +text-block(12px, 1.3)
+      +text-block(12px 1.3)
 .header__site-title-logo
   +rem('width', 48px)
   height: auto
   +top(-26px)
   +rem('margin-right', 8px)
 .header__site-read-line
-  +text-block(24px, 1, false, center)
+  +text-block(24px 1, center $reverse-text-color)
   +main-font
   +rem('letter-spacing', 1px)
 
 .header__sass-link
-  +absolute(left, 0, bottom, 16px)
+  +absolute(left 0, bottom 16px)
   +block-link
   +rem('width', 60px)
 .header__sass-logo
@@ -83,7 +83,7 @@ body
   height: auto
   +rem('margin-bottom', 6px)
 .header__sass-title
-  +text-block(12px, 1, false, rgba($text-color, .4), center)
+  +text-block(12px 1, rgba($text-color, .4) center)
   display: block
   +main-font
 
@@ -92,8 +92,8 @@ body
   $motion-size: 16px
   +block-link
   background-color: $text-color
-  +text-block(36px, $size, false, center, $main-color)
-  +absolute(right, 0, top, $motion-size*-1)
+  +text-block(36px $size, center $main-color)
+  +absolute(right 0, top $motion-size*-1)
   +rem('width', $size)
   +rem('padding-top', $motion-size)
   &:hover
