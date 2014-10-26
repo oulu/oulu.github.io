@@ -1,6 +1,9 @@
 .title
   background-color: $main-color
   +rem('margin-bottom', 24px)
+  &:after
+    $variables: Lentz, Holt, Cardew
+    content: optional_nth($variables, 4, unko)
 .title__title
   +top(4px)
   +text-block(42px 100px, bold $reverse-text-color)
