@@ -10,9 +10,8 @@ $sub-width: 160px
 .wrapper
   +rem('max-width', $wrapper-max-width)
   +box-sizing(border-box)
-  +horizontal-margin(auto)
-  +rem('padding-left', $wrapper-padding)
-  +rem('padding-right', $wrapper-padding)
+  +margin(horizontal, auto)
+  +padding(horizontal, $wrapper-padding)
   clear: both
 
 body
