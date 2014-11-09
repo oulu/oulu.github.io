@@ -1,17 +1,17 @@
 - blog.articles.sort_by(&:date).each do |article|
   - if in_mixins?
-    - if article.data.category.include?('mixins')
+    - if article.data.category == ('mixins')
       li.local-nav__item
         = link_to article.data.title, article, class: "local-nav__link #{is_current_page?(article.url)} #{lang_class(article.data.title)}"
   - elsif in_functions?
-    - if article.data.category.include?('functions')
+    - if article.data.category == ('functions')
       li.local-nav__item
         = link_to article.data.title, article, class: "local-nav__link #{is_current_page?(article.url)} #{lang_class(article.data.title)}"
   - elsif in_helpers?
-    - if article.data.category.include?('helpers')
+    - if article.data.category == ('helpers')
       li.local-nav__item
         = link_to article.data.title, article, class: "local-nav__link #{is_current_page?(article.url)} #{lang_class(article.data.title)}"
   - elsif in_blog?
-    - if article.data.category.include?('blog')
+    - if article.data.category == ('blog')
       li.local-nav__item
         = link_to article.data.title, article, class: "local-nav__link #{is_current_page?(article.url)} #{lang_class(article.data.title)}"

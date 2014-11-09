@@ -1,15 +1,16 @@
 ---
-title: number
-last_update: 2014-10-06
+
+title: number last_update: 2014-10-06
+
 category: functions
----
+-------------------
 
 number `type_of == number` を扱う function はこちらにまとめられています。
 
 number( )
 ---------
 
-引数がnumber `type_of == number` かどうかを判別するための function です。`number($number)` に渡した値が number だった場合は true を返します。それ以外は null を返します。
+引数が number `type_of == number` かどうかを判別するための function です。`number($value)` に渡した値が number だった場合は `true` を返します。それ以外は `null` を返します。
 
 ```
 number(3)
@@ -18,12 +19,12 @@ number(3%)
 number(3em)
 ```
 
-この場合、`3` 、`3px` 、`3%` 、`3em` はnumber（type_of == number）なので true が返ってきます。
+この場合、`3` 、`3px` 、`3%` 、`3em` はnumber（type_of == number）なので true を返します。
 
 odd( )
 ------
 
-引数が奇数か偶数かを判別するための function です。`odd($number)` の引数（$number）に渡した値がnumberでかつ奇数だった場合は true を返します。それ以外は null を返します。
+引数が奇数か偶数かを判別するための function です。`odd($number)` の引数（$number）に渡した値がnumberでかつ奇数だった場合は `true` を返します。それ以外は `null` を返します。
 
 ```
 odd(3)
@@ -32,7 +33,7 @@ odd(3%)
 odd(3em)
 ```
 
-この場合、`3` は奇数なので true が返ってきます。
+この場合、`3` は奇数なので true を返します。
 
 even( )
 -------
@@ -46,12 +47,12 @@ even(2%)
 even(2em)
 ```
 
-この場合、`2` は偶数なので true が返ってきます。
+この場合、`2` は偶数なので `true` を返します。
 
 strip_unit( )
 -------------
 
-引数の number から単位を外すための function です。引数がnumberの場合、引数に付いている単位（`px` 、 `%`、 `em` など）を外した、単位無しのnumberが返ってきます。
+引数の number から単位を外すための function です。引数がnumberの場合、引数に付いている単位（`px` 、 `%`、 `em` など）を外した、単位無しの number を返します。
 
 ```
 strip_unit(2)
@@ -60,7 +61,7 @@ strip_unitn(2%)
 strip_unit(2em)
 ```
 
-この場合、全て `2` が返ってきます。
+この場合、全て `2` を返します。
 
 unitless_number( )
 ------------------
@@ -72,7 +73,7 @@ unitless_number(2)
 unitless_number(0.2)
 ```
 
-この場合、`2` 、`0.2` は単位がない number なので true が返ってきます。
+この場合、`2` 、`0.2` は単位がない number なので `true` を返します。
 
 ```
 unitless_number(2px)
@@ -80,7 +81,7 @@ unitless_number(2%)
 unitless_number(2em)
 ```
 
-この場合、`2px` 、`2%`、`2em` は単位がある number なので null が返ってきます。
+この場合、`2px` 、`2%`、`2em` は単位がある number なので `null` を返します。
 
 px( )
 -----
@@ -91,7 +92,7 @@ px( )
 px(2px)
 ```
 
-この場合、`2px` は単位が px の number なので null が返ってきます。
+この場合、`2px` は単位が px の number なので `null` を返します。
 
 em( )
 -----
@@ -102,7 +103,7 @@ em( )
 em(2em)
 ```
 
-この場合、`2px` は単位が em の number なので null が返ってきます。
+この場合、`2px` は単位が em の number なので `null` を返します。
 
 percent( )
 ----------
@@ -113,9 +114,9 @@ percent( )
 percent(2%)
 ```
 
-この場合、`2%` は単位が % の number なので null が返ってきます。
+この場合、`2%` は単位が % の number なので `null` を返します。
 
-px\_to\_em( )
+px_to_em( )
 -----------
 
 単位が px の number を単位 em の number に変換するための function です。
@@ -129,7 +130,7 @@ px_to_em(32px, 16px)
 
 この場合、32px を 16px を基準とした単位 em の number に変換された を返します。
 
-em\_to\_px( )
+em_to_px( )
 -----------
 
 単位が em の number を単位 px の number に変換するための function です。
