@@ -188,7 +188,7 @@ helpers do
     when true
       return 'is-en'
     end
-    return 'is-ja'
+      return 'is-ja'
   end
 
   def text_size(text)

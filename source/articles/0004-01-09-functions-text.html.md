@@ -16,7 +16,7 @@ $value: center
 text_align($value)
 ```
 
-上記の場合、`text_align()` に渡された引数は css プロパティ `text-align` で使用できる値なので、 `true` を返します。
+上記の場合、`text_align( )` に渡された引数は css プロパティ `text-align` で使用できる値なので、 `true` を返します。
 
 
 ## font_weight( )
@@ -32,7 +32,7 @@ $value: 100
 text_align($value)
 ```
 
-上記の場合、`text_weight()` に渡された引数は css プロパティ `font_weight` で使用できる値なので、 `true` を返します。
+上記の場合、`text_weight( )` に渡された引数は css プロパティ `font_weight` で使用できる値なので、 `true` を返します。
 
 
 ## font_style( )

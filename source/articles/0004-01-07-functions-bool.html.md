@@ -4,7 +4,7 @@ last_update: 2014-10-06
 category: functions
 ---
 
-## bool()
+## bool( )
 
 渡された引数が `type-of($value) == bool` か否かを判別するための function です。`true` もしくは `false` が渡された場合は `true` を返し、それ以外は `null` を返します。 
 

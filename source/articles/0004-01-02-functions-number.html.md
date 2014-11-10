@@ -1,9 +1,8 @@
 ---
-
-title: number last_update: 2014-10-06
-
+title: number
+last_update: 2014-10-06
 category: functions
--------------------
+---
 
 number `type_of == number` を扱う function はこちらにまとめられています。
 

@@ -4,7 +4,7 @@ last_update: 2014-10-06
 category: functions
 ---
 
-## position()
+## position( )
 
 渡された引数が `top` `right` `bottom` `left` `center` のいずれかであるか否かを判別するための function です。`top` `right` `bottom` `left` `center` の場合、 `true` を返します。それ以外は `null` を返します。
 
@@ -20,9 +20,9 @@ $value: center
 position($value)
 ```
 
-上記の場合、`position()` に渡された引数は `top` `right` `bottom` `left` `center` のいずれかなので `true` を返します。
+上記の場合、`position( )` に渡された引数は `top` `right` `bottom` `left` `center` のいずれかなので `true` を返します。
 
-## top()
+## top( )
 
 渡された引数が `top` かであるか否かを判別するための function です。`top` の場合、 `true` を返します。それ以外は `null` を返します。
 
@@ -30,10 +30,10 @@ position($value)
 top(top)
 ```
 
-上記の場合、`position()` に渡された引数は `top` なので `true` を返します。
+上記の場合、`position( )` に渡された引数は `top` なので `true` を返します。
 
 
-## bottom()
+## bottom( )
 
 渡された引数が `bottom` かであるか否かを判別するための function です。`bottom` の場合、 `true` を返します。それ以外は `null` を返します。
 
