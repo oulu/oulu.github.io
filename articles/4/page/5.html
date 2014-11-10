@@ -8,18 +8,29 @@ color(rgb(255, 255, 255))
 </pre></td></tr></tbody></table></div><p>この場合、それぞれの渡された引数（<code>white</code><code>#ffffff</code><code>#fff</code><code>rgb(255, 255, 255)</code><code>rgba(255, 255, 255, .4)</code>） は <code>color（type_of == color）</code> なので <code>true</code> を返します。</p><h2>luma( )</h2><p>色の luma（知覚明度）を調査するための function です。引数に渡された色の luma（知覚明度）を 0 〜 100 の値で返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
-4</pre></td><td class="code"><pre>luma(white)
-luma(#000)
-luma(gray)
-luma(#920000)
-</pre></td></tr></tbody></table></div><ul><li>luma(white) → 100</li><li>luma(#000) → 0</li><li>luma(gray) → 21.58605</li><li>luma(#920000) → 6.11099</li></ul><p>上記のように、引数に渡された色の luma（知覚明度）を 0 〜 100 の値で返します。</p><h2>luma_contrast( )</h2><p>2つの色の luma（知覚明度）の差が十分にあるかを判別するための function です。 差が十分であるか不十分かのしきい値は <code>31.83099</code> をデフォルトで設定されいます。このしきい値を変更するには、<code>$ruma-threshold: 100 / pi() !default</code> の値を上書きしてください。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+4</pre></td><td class="code"><pre>luma(white) → 100
+luma(#000) → 0
+luma(gray) → 21.58605
+luma(#920000) → 6.11099
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）を 0 〜 100 の値で返します。</p><h2>luma_contrast( )</h2><p>2つの色の luma（知覚明度）の差がしきい値以上あるか否かを判別するための function です。 差が十分であるか不十分かのしきい値は <code>31.83099</code> をデフォルトで設定されいます。このしきい値を変更するには、<code>$ruma-threshold: 100 / pi() !default</code> の値を上書きしてください。 しきい値以上の luma（知覚明度）の差がある場合は <code>true</code> 、それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre>luma_contrast(white, #000)
-luma_contrast(gray, #920000)
-luma_contrast(red, blue)
+3
+4</pre></td><td class="code"><pre>luma_contrast(#ffffff, #000000) → true
+luma_contrast(gray, #920000) → null
+luma_contrast(black, yellow) → true
+luma_contrast(red, blue) → null
 </pre></td></tr></tbody></table></div><h2>luma_value( )</h2><p>2つの色の luma（知覚明度）の差を調査するための function です。第一引数に渡された色と第二引数に渡された色の luma（知覚明度）の差を 0 〜 100 の値で返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
-3</pre></td><td class="code"><pre>luma_value(white, #000)
-luma_value(gray, #920000)
-luma_value(red, blue)
-</pre></td></tr></tbody></table></div><ul><li>luma(white) → 100</li><li>luma(#000) → 0</li><li>luma(gray) → 21.58605</li><li>luma(#920000) → 6.11099</li></ul><p>上記のように、引数に渡された色の luma（知覚明度）を 0 〜 100 の値で返します。</p><h2>luma_bright( )</h2><h2>luma_dark( )</h2><h2>luma<em>contrast</em>color( )</h2><h2>luma<em>add</em>contrast( )</h2></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></article><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/4.html"><i class="fa fa-angle-left"></i></a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/3.html">3</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/4.html">4</a></li><li class="pagenate__item is-en"><span class="pagenate__current">5</span></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/6.html">6</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/7.html">7</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/6.html"><i class="fa fa-angle-right"></i></a></li></ul></div></div></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"></ul></nav></div></div></div><footer class="footer" id="footer"><div class="wrapper"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2014</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
+3
+4</pre></td><td class="code"><pre>luma_value(#ffffff, #000000) → 100
+luma_value(gray, #920000) → 15.47506
+luma_value(black, yellow) → 92.78
+luma_value(red, blue) → 14.04
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）の差を 0 〜 100 の値で返します。</p><h2>luma_which( )</h2><p>色の luma（知覚明度）が中間より暗いか明るいかを判別するための function です。 luma（知覚明度）が50以下なら <code>dark</code> 、51以上なら <code>bright</code> の値を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>luma_which(#ffffff) → bright
+luma_which(gray) → dark
+luma_which(black) → dark
+luma_which(pink) → bright
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）が50以下なら <code>dark</code> 、51以上なら <code>bright</code> の値を返します。</p><h2>luma_bright( )</h2><h2>luma_dark( )</h2><h2>luma<em>contrast</em>color( )</h2><h2>luma<em>add</em>contrast( )</h2></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></article><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/4.html"><i class="fa fa-angle-left"></i></a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/3.html">3</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/4.html">4</a></li><li class="pagenate__item is-en"><span class="pagenate__current">5</span></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/6.html">6</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/7.html">7</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/4/page/6.html"><i class="fa fa-angle-right"></i></a></li></ul></div></div></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"></ul></nav></div></div></div><footer class="footer" id="footer"><div class="wrapper"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2014</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
