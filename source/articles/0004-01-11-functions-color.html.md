@@ -60,6 +60,21 @@ luma_value(red, blue) → 14.04
 
 上記のように、引数に渡された色の luma（知覚明度）の差を 0 〜 100 の値で返します。
 
+
+## luma_which( )
+
+色の luma（知覚明度）が中間より暗いか明るいかを判別するための function です。 luma（知覚明度）が50以下なら `dark` 、51以上なら `bright` の値を返します。
+
+```
+luma_which(#ffffff) → bright
+luma_which(gray) → dark
+luma_which(black) → dark
+luma_which(pink) → bright
+```
+
+上記のように、引数に渡された色の luma（知覚明度）が50以下なら `dark` 、51以上なら `bright` の値を返します。
+
+
 ## luma_bright( )
 
 ## luma_dark( )
