@@ -12,13 +12,24 @@ color(rgb(255, 255, 255))
 luma(#000) → 0
 luma(gray) → 21.58605
 luma(#920000) → 6.11099
-</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）を 0 〜 100 の値で返します。</p><h2>luma_contrast( )</h2><p>2つの色の luma（知覚明度）の差がしきい値以上あるか否かを判別するための function です。 差が十分であるか不十分かのしきい値は <code>31.83099</code> をデフォルトで設定されいます。このしきい値を変更するには、<code>$ruma-threshold: 100 / pi() !default</code> の値を上書きしてください。 しきい値以上の luma（知覚明度）の差がある場合は <code>true</code> 、それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）を 0 〜 100 の値で返します。</p><h2>luma_contrast( )</h2><p>2つの色の luma（知覚明度）の差がしきい値以上あるか否かを判別するための function です。</p><p>差が十分であるか不十分かのしきい値のデフォルトの値は <code>31.83099</code> に設定されてます。このしきい値を変更するには、グローバルな変数 <code>$ruma-threshold</code> の値を上書きしてください。</p><p>しきい値以上の luma（知覚明度）の差がある場合は <code>true</code> 、それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4</pre></td><td class="code"><pre>luma_contrast(#ffffff, #000000) → true
 luma_contrast(gray, #920000) → null
 luma_contrast(black, yellow) → true
 luma_contrast(red, blue) → null
+</pre></td></tr></tbody></table></div><h3>初期値を上書きした場合</h3><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>$ruma-threshold: 10
+
+luma_contrast(#ffffff, #000000) → true
+luma_contrast(gray, #920000) → true
+luma_contrast(black, yellow) → true
+luma_contrast(red, blue) → true
 </pre></td></tr></tbody></table></div><h2>luma_value( )</h2><p>2つの色の luma（知覚明度）の差を調査するための function です。第一引数に渡された色と第二引数に渡された色の luma（知覚明度）の差を 0 〜 100 の値で返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -33,4 +44,45 @@ luma_value(red, blue) → 14.04
 luma_which(gray) → dark
 luma_which(black) → dark
 luma_which(pink) → bright
-</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）が50以下なら <code>dark</code> 、51以上なら <code>bright</code> の値を返します。</p><h2>luma_bright( )</h2><h2>luma_dark( )</h2><h2>luma<em>contrast</em>color( )</h2><h2>luma<em>add</em>contrast( )</h2></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></article><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en is-hidden"><span>Prev</span></li><li class="pagenate__item is-en is-hidden"><span>Next</span></li></ul></div></div></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"></ul></nav></div></div></div><footer class="footer" id="footer"><div class="wrapper"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2014</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）が50以下なら <code>dark</code> 、51以上なら <code>bright</code> の値を返します。</p><h2>luma_bright( )</h2><p>色の luma（知覚明度）が中間より明るいか否かを判別するための function です。 luma（知覚明度）が51以上なら <code>true</code> 、それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>luma_which(#ffffff) → true
+luma_which(gray) → null
+luma_which(black) → null
+luma_which(pink) → true
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）が51以上なら true<code>、それ以外は</code>null` を返します。</p><h2>luma_dark( )</h2><p>色の luma（知覚明度）が中間より暗いか否かを判別するための function です。 luma（知覚明度）が50以下なら <code>true</code> 、それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>luma_which(#ffffff) → null
+luma_which(gray) → true
+luma_which(black) → ture
+luma_which(pink) → null
+</pre></td></tr></tbody></table></div><p>上記のように、引数に渡された色の luma（知覚明度）が50以下なら <code>true</code> 、それ以外は <code>null</code> を返します。</p><h2>luma_contrast_color( )</h2><p>色の luma（知覚明度）の中間より暗いか否かを判別し、その結果によって特定の色を返す function です。 上記した function <code>luma_which( )</code> の結果が <code>bright</code> の場合、 <code>$luma-contrast-bright-color</code> を返し、結果が <code>dark</code> の場合、 <code>$luma-contrast-dark-color</code> を返します。</p><ul><li><code>$luma-contrast-bright-color</code> の初期値は <code>#000000</code></li><li><code>$luma-contrast-dark-color</code> の初期値は <code>#ffffff</code></li></ul><p>に設定されています。</p><p><code>$luma-contrast-bright-color</code>、<code>$luma-contrast-dark-color</code> はそれぞれグローバルな変数です。別の値を設定する場合は、この変数を上書きしてください。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>luma_contrast_color(#ffffff) → #000000
+luma_contrast_color(gray) → #ffffff
+luma_contrast_color(black) → #ffffff
+luma_contrast_color(pink) → #000000
+</pre></td></tr></tbody></table></div><h3>初期値を上書きした場合</h3><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre>$luma-contrast-bright-color: maroon
+$luma-contrast-dark-color: pink
+
+luma_contrast_color(#ffffff) → maroon
+luma_contrast_color(gray) → pink
+luma_contrast_color(black) → pink
+luma_contrast_color(pink) → maroon
+</pre></td></tr></tbody></table></div><h2>luma_add_contrast( )</h2><p>2つ色の luma（知覚明度）の差が、上記した function <code>luma_contrast( )</code> で判別した結果、しきい値以上でなかった場合に、白もしくは黒を混ぜてコントラストを補正した色を返す function です。</p><p>第一引数に比較対象の色、第二引数にコントラストを補正したい色を渡します。第一引数の色と第二引数の色が<code>luma_contrast( )</code> で判別した結果、しきい値以上であった場合は第二引数で渡した色をそのまま返します。</p><p>そうでなかった場合、</p><p>第一引数で渡した比較対象の色が luma（知覚明度）が50以下の場合は、第二引数に渡された色に白を足した色を返します。</p><p>第一引数で渡した比較対象の色が luma（知覚明度）が51以上の場合は、第二引数に渡された色に黒を足した色を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>luma_add_contrast(#ffffff, #000000) → #000000
+luma_add_contrast(gray, #920000) → #ca8585
+luma_add_contrast(black, yellow) → yellow
+luma_add_contrast(red, blue) → #8787ff
+</pre></td></tr></tbody></table></div></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></article><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en is-hidden"><span>Prev</span></li><li class="pagenate__item is-en is-hidden"><span>Next</span></li></ul></div></div></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"></ul></nav></div></div></div><footer class="footer" id="footer"><div class="wrapper"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2014</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
