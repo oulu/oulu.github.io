@@ -1,0 +1,18 @@
+.articles-article
+  display: block
+  +rem('padding-bottom', 10px)
+  +rem('margin-bottom', 10px)
+  +border(bottom, 1px dotted rgba($blue-ll, .2))
+.articles-article__title
+  +rem('width', 320px)
+  +inline-block
+.articles-article__title-link
+  +text-block(18px 1.4, $main-color)
+  +block-link
+  +main-bold-font
+.articles-article__update-at
+  +main-font
+  +inline-block
+  +text-block(12px)
+  .is-label
+    +rem('margin-right', 8px)

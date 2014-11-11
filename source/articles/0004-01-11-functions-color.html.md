@@ -36,7 +36,9 @@ luma(#920000) → 6.11099
 ## luma_contrast( )
 
 2つの色の luma（知覚明度）の差がしきい値以上あるか否かを判別するための function です。
-差が十分であるか不十分かのしきい値は `31.83099` をデフォルトで設定されいます。このしきい値を変更するには、`$ruma-threshold: 100 / pi() !default` の値を上書きしてください。
+
+差が十分であるか不十分かのしきい値のデフォルトの値は `31.83099` に設定されてます。このしきい値を変更するには、グローバルな変数 `$ruma-threshold` の値を上書きしてください。
+
 しきい値以上の luma（知覚明度）の差がある場合は `true` 、それ以外は `null` を返します。
 
 ```
@@ -46,6 +48,16 @@ luma_contrast(black, yellow) → true
 luma_contrast(red, blue) → null
 ```
 
+### 初期値を上書きした場合
+
+```
+$ruma-threshold: 10
+
+luma_contrast(#ffffff, #000000) → true
+luma_contrast(gray, #920000) → true
+luma_contrast(black, yellow) → true
+luma_contrast(red, blue) → true
+```
 
 ## luma_value( )
 
@@ -77,8 +89,79 @@ luma_which(pink) → bright
 
 ## luma_bright( )
 
+色の luma（知覚明度）が中間より明るいか否かを判別するための function です。 luma（知覚明度）が51以上なら `true` 、それ以外は `null` を返します。
+
+```
+luma_which(#ffffff) → true
+luma_which(gray) → null
+luma_which(black) → null
+luma_which(pink) → true
+```
+
+上記のように、引数に渡された色の luma（知覚明度）が51以上なら true` 、それ以外は `null` を返します。
+
+
 ## luma_dark( )
 
-## luma_contrast_color( )
+色の luma（知覚明度）が中間より暗いか否かを判別するための function です。 luma（知覚明度）が50以下なら `true` 、それ以外は `null` を返します。
 
-## luma_add_contrast( )
+```
+luma_which(#ffffff) → null
+luma_which(gray) → true
+luma_which(black) → ture
+luma_which(pink) → null
+```
+
+上記のように、引数に渡された色の luma（知覚明度）が50以下なら `true` 、それ以外は `null` を返します。
+
+
+## luma\_contrast\_color( )
+
+色の luma（知覚明度）の中間より暗いか否かを判別し、その結果によって特定の色を返す function です。
+上記した function `luma_which( )` の結果が `bright` の場合、 `$luma-contrast-bright-color` を返し、結果が `dark` の場合、 `$luma-contrast-dark-color` を返します。
+
+- `$luma-contrast-bright-color` の初期値は `#000000`
+- `$luma-contrast-dark-color` の初期値は `#ffffff`
+
+に設定されています。
+
+`$luma-contrast-bright-color`、`$luma-contrast-dark-color` はそれぞれグローバルな変数です。別の値を設定する場合は、この変数を上書きしてください。
+
+
+```
+luma_contrast_color(#ffffff) → #000000
+luma_contrast_color(gray) → #ffffff
+luma_contrast_color(black) → #ffffff
+luma_contrast_color(pink) → #000000
+```
+### 初期値を上書きした場合
+
+```
+$luma-contrast-bright-color: maroon
+$luma-contrast-dark-color: pink
+
+luma_contrast_color(#ffffff) → maroon
+luma_contrast_color(gray) → pink
+luma_contrast_color(black) → pink
+luma_contrast_color(pink) → maroon
+```
+
+
+## luma\_add\_contrast( )
+
+2つ色の luma（知覚明度）の差が、上記した function `luma_contrast( )` で判別した結果、しきい値以上でなかった場合に、白もしくは黒を混ぜてコントラストを補正した色を返す function です。
+
+第一引数に比較対象の色、第二引数にコントラストを補正したい色を渡します。第一引数の色と第二引数の色が`luma_contrast( )` で判別した結果、しきい値以上であった場合は第二引数で渡した色をそのまま返します。
+
+そうでなかった場合、
+
+第一引数で渡した比較対象の色が luma（知覚明度）が50以下の場合は、第二引数に渡された色に白を足した色を返します。
+
+第一引数で渡した比較対象の色が luma（知覚明度）が51以上の場合は、第二引数に渡された色に黒を足した色を返します。
+
+```
+luma_add_contrast(#ffffff, #000000) → #000000
+luma_add_contrast(gray, #920000) → #ca8585
+luma_add_contrast(black, yellow) → yellow
+luma_add_contrast(red, blue) → #8787ff
+```

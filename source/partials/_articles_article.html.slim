@@ -1,8 +1,8 @@
 li.articles-article
-  h2.articles-article__title= link_to article.title, article, class: "article__title-link #{lang_class(article.title)}"
+  h2.articles-article__title= link_to article.title, article, class: "articles-article__title-link #{lang_class(article.title)}"
   - if article.data.last_update
-    p.articles-article__created-at.is-en
-      | last update
-      = article.data.last_update.strftime('%Y/%m/%d')
+    p.articles-article__update-at.is-en
+      span.is-label last update
+      span.is-date= article.data.last_update.strftime('%Y/%m/%d')
   - if data.site.disqus
     = partial('partials/disqus')

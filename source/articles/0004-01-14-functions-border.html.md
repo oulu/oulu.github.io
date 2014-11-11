@@ -1,5 +1,5 @@
 ---
-title: Sample post
+title: border
 last_update: 2014-10-06
 category: functions
 ---

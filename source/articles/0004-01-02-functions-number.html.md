@@ -6,10 +6,10 @@ category: functions
 
 number `type_of == number` を扱う function はこちらにまとめられています。
 
-number( )
----------
+## number( )
 
-引数が number `type_of == number` かどうかを判別するための function です。`number($value)` に渡した値が number だった場合は `true` を返します。それ以外は `null` を返します。
+
+引数が number `type_of == number` かどうかを判別するための function です。`number( )` に渡した値が number だった場合は `true` を返します。それ以外は `null` を返します。
 
 ```
 number(3)
@@ -20,8 +20,7 @@ number(3em)
 
 この場合、`3` 、`3px` 、`3%` 、`3em` はnumber（type_of == number）なので true を返します。
 
-odd( )
-------
+## odd( )
 
 引数が奇数か偶数かを判別するための function です。`odd($number)` の引数（$number）に渡した値がnumberでかつ奇数だった場合は `true` を返します。それ以外は `null` を返します。
 
@@ -34,10 +33,9 @@ odd(3em)
 
 この場合、`3` は奇数なので true を返します。
 
-even( )
--------
+## even( )
 
-`even($number)` も `odd($number)` と同じく奇数か偶数かを判別するための function です。`even($number)` に渡した引数（$value）にnumberを渡し、こちらは `odd($number)` の逆でそのnumberが偶数だった場合は `true` を返します。それ以外は `null` を返します。
+`even( )` も `odd( )` と同じく奇数か偶数かを判別するための function です。`even( )` に渡した引数（$value）にnumberを渡し、こちらは `odd( )` の逆でそのnumberが偶数だった場合は `true` を返します。それ以外は `null` を返します。
 
 ```
 even(2)
@@ -48,8 +46,7 @@ even(2em)
 
 この場合、`2` は偶数なので `true` を返します。
 
-strip_unit( )
--------------
+## strip_unit( )
 
 引数の number から単位を外すための function です。引数がnumberの場合、引数に付いている単位（`px` 、 `%`、 `em` など）を外した、単位無しの number を返します。
 
@@ -62,10 +59,9 @@ strip_unit(2em)
 
 この場合、全て `2` を返します。
 
-unitless_number( )
-------------------
+## unitless_number( )
 
-引数が単位のない number かどうかを判別するための function です。`unitless_number($number)` に渡した引数（$number）がnumberでかつ、単位がない場合、`true` を返します。それ以外は `null` を返します。
+引数が単位のない number かどうかを判別するための function です。`unitless_number( )` に渡した引数（ ）がnumberでかつ、単位がない場合、`true` を返します。それ以外は `null` を返します。
 
 ```
 unitless_number(2)
@@ -82,10 +78,9 @@ unitless_number(2em)
 
 この場合、`2px` 、`2%`、`2em` は単位がある number なので `null` を返します。
 
-px( )
------
+## px( )
 
-引数が単位 px の number かどうかを判別するための function です。`px($number)` に渡した引数（$number）が number でかつ、単位が px の場合、`true` を返します。それ以外は `null` を返します。
+引数が単位 px の number かどうかを判別するための function です。`px( )` に渡した引数が number でかつ、単位が px の場合、`true` を返します。それ以外は `null` を返します。
 
 ```
 px(2px)
@@ -93,10 +88,9 @@ px(2px)
 
 この場合、`2px` は単位が px の number なので `null` を返します。
 
-em( )
------
+## em( )
 
-引数が単位 em の number かどうかを判別するための function です。`em($number)` に渡した引数（$number）がnumberでかつ、単位が em の場合、`true` を返します。それ以外は `null` を返します。
+引数が単位 em の number かどうかを判別するための function です。`em( )` に渡した引数がnumberでかつ、単位が em の場合、`true` を返します。それ以外は `null` を返します。
 
 ```
 em(2em)
@@ -104,10 +98,9 @@ em(2em)
 
 この場合、`2px` は単位が em の number なので `null` を返します。
 
-percent( )
-----------
+## percent( )
 
-引数が単位 % の number かどうかを判別するための function です。`percent($number)` に渡した引数（$number）がnumberでかつ、単位が % の場合、`true` を返します。それ以外は `null` を返します。
+引数が単位 % の number かどうかを判別するための function です。`percent( )` に渡した引数がnumberでかつ、単位が % の場合、`true` を返します。それ以外は `null` を返します。
 
 ```
 percent(2%)
@@ -115,8 +108,7 @@ percent(2%)
 
 この場合、`2%` は単位が % の number なので `null` を返します。
 
-px_to_em( )
------------
+## px\_to\_em( )
 
 単位が px の number を単位 em の number に変換するための function です。
 
@@ -129,8 +121,7 @@ px_to_em(32px, 16px)
 
 この場合、32px を 16px を基準とした単位 em の number に変換された を返します。
 
-em_to_px( )
------------
+## em\_to\_px( )
 
 単位が em の number を単位 px の number に変換するための function です。
 
@@ -143,8 +134,7 @@ em_to_px(2m, 16px)
 
 この場合、2em を 16px を基準とした単位 px の number に変換された を返します。
 
-first_order( )
---------------
+## first_order( )
 
 複数の変数を持つ変数リストを第一引数に渡し、第二引数にその変数リストの中の任意の変数が変数リストの一番目か否かを判別するための function です。
 
