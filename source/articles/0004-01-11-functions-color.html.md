@@ -17,7 +17,7 @@ color(#fff)
 color(rgb(255, 255, 255))
 ```
 
-この場合、それぞれの渡された引数（`white` `#ffffff` `#fff` `rgb(255, 255, 255)` `rgba(255, 255, 255, .4)`） は `color（type_of == color）` なので `true` を返します。
+上記の場合、それぞれの渡された引数（`white` `#ffffff` `#fff` `rgb(255, 255, 255)` `rgba(255, 255, 255, .4)`） は `color（type_of == color）` なので `true` を返します。
 
 ## luma( )
 
