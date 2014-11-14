@@ -88,4 +88,49 @@ background-size(/cover)
 それぞれの渡された引数が `background` に関する css プロパティの値の判別に使われた場合、上記は `background-size` に対しての値なので `true` を返します。基本的に `background-size` に対しての値を書く場合、Oulu には先頭に `/`（スラッシュ）を付けるというルールがあります。このルールについての詳細は女医気、background_position( ) の中にある background-position と background-size に対する値の書き方のルール を参照ください。
 
 ## background_repeat( )
+
+`background` に関する css プロパティ（ `background-color` `background-position` `background-size` `background-size` `background-repeat` `background-attachment` のいずれか）のうちのどれに対して与えられた値かを判別するための function の一つです。
+
+`background_repeat( )` は渡された引数が `background-repeat` に対する値だった場合に `true` を返します。
+
+```
+background_repeat(no-repeat)
+background-repeat(repeat)
+background-repeat(repeat-x)
+background-repeat(repeat-y)
+```
+
+それぞれの渡された引数が `background` に関する css プロパティの値の判別に使われた場合、上記は `background-repeat` に対しての値なので `true` を返します。
+
 ## background_attachment( )
+
+`background` に関する css プロパティ（ `background-color` `background-position` `background-size` `background-size` `background-repeat` `background-attachment` のいずれか）のうちのどれに対して与えられた値かを判別するための function の一つです。
+
+`background_attachment( )` は渡された引数が `background-attachment` に対する値だった場合に `true` を返します。
+
+```
+background_attachment(fixed)
+background-attachment(scroll)
+```
+
+それぞれの渡された引数が `background` に関する css プロパティの値の判別に使われた場合、上記は `background-attachment` に対しての値なので `true` を返します。
+
+## background_image( )
+
+`background` に関する css プロパティ（ `background-color` `background-position` `background-size` `background-size` `background-repeat` `background-attachment` のいずれか）のうちのどれに対して与えられた値かを判別するための function の一つです。
+
+`background_attachment( )` は渡された引数が `background-image` に対する値だった場合に `true` を返します。
+
+`background_image( )` は渡された引数が `background-color` に対する値だった場合に `true` を返します。引数が画像だった場合に `true` を返す function `image( )` と同じ機能を果たしますが、`background` に関する css プロパティに対して使う際に明示的に `background` に関する css プロパティの中の `background-image` か否かと書くことができます。
+
+```
+background_image('image.jpg')
+background-image('image.JPG')
+background-image('image.jpeg')
+background-image('image.png')
+background-image('image.gif')
+background-image('image.tiff')
+background-image('image.svg')
+```
+
+それぞれの渡された引数が `background` に関する css プロパティの値の判別に使われた場合、上記は `background-attachment` に対しての値なので `true` を返します。
