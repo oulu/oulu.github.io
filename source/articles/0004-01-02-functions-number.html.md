@@ -18,7 +18,34 @@ number(3%)
 number(3em)
 ```
 
-この場合、`3` 、`3px` 、`3%` 、`3em` はnumber（type_of == number）なので true を返します。
+上記の場合、`3` 、`3px` 、`3%` 、`3em` は `number(type_of == number)` なので true を返します。
+
+## number_list( )
+
+引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て number `type_of == number` かどうかを判別するための function です。`number( )` に渡した値が number だった場合は `true` を返します。それ以外は `null` を返します。
+
+```
+number_list(3 3px)
+number_list(3px 3% 3px)
+```
+
+上記の場合、それぞれの渡された引数の変数リストの一つ一つの変数は全て `number(type_of == number)` なので `true` を返します。
+
+## optional_number_list( )
+
+
+引数が color `type_of == number` 、もしくは、引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て color `type_of == number` かどうかを判別するための function です。
+
+上記した、`number( )`　もしくは、`number_list( )` で、`true` を返す値を渡した場合、`optional_number_list( )` でも `true` を返します。
+
+```
+optional_number_list(3)
+optional_number_list(3px)
+optional_number_list(3% 3px)
+optional_number_list(3em 3% 3px)
+```
+
+上記の場合、それぞれの渡された引数が、`number( )` で `true` を返す値、もしくは、`number_list( )` で `true` を返す値なので、 `true` を返します。
 
 ## odd( )
 

@@ -8,7 +8,7 @@ color `type_of == color` を扱う function はこちらにまとめられてい
 
 ## color( )
 
-引数が color `type_of == number` かどうかを判別するための function です。`color($value)` に渡した値が color だった場合は `true` を返します。それ以外は `null` を返します。
+引数が color `type_of == color` かどうかを判別するための function です。`color( )` に渡した値が color だった場合は `true` を返します。それ以外は `null` を返します。
 
 ```
 color(white)
@@ -18,6 +18,39 @@ color(rgb(255, 255, 255))
 ```
 
 上記の場合、それぞれの渡された引数（`white` `#ffffff` `#fff` `rgb(255, 255, 255)` `rgba(255, 255, 255, .4)`） は `color（type_of == color）` なので `true` を返します。
+
+## color_list( )
+
+引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て color `type_of == color` かどうかを判別するための function です。`color_list( )` に渡した値の一つ一つ全てが color だった場合は `true` を返します。それ以外は `null` を返します。
+
+```
+color(white red)
+color(#ffffff #000000)
+color(#fff red)
+color(rgb(255, 255, 255) #fff red)
+```
+
+上記の場合、それぞれの渡された引数の変数リストの一つ一つの変数は全て `color（type_of == color）` なので `true` を返します。
+
+
+## optional_color_list( )
+
+引数が color `type_of == color` 、もしくは、引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て color `type_of == color` かどうかを判別するための function です。
+
+上記した、`color( )`　もしくは、`color_list( )` で、`true` を返す値を渡した場合、`optional_color_list( )` でも `true` を返します。
+
+
+```
+color(white)
+color(white red)
+color(#fff)
+color(#ffffff #000000)
+color(#fff red)
+color(rgb(255, 255, 255) #fff red)
+```
+
+上記の場合、それぞれの渡された引数が、`color( )` で `true` を返す値、もしくは、`color_list( )` で `true` を返す値なので、 `true` を返します。
+
 
 ## luma( )
 
