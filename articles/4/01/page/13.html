@@ -5,7 +5,17 @@
 number(3px)
 number(3%)
 number(3em)
-</pre></td></tr></tbody></table></div><p>この場合、<code>3</code> 、<code>3px</code> 、<code>3%</code> 、<code>3em</code> はnumber（type_of == number）なので true を返します。</p><h2>odd( )</h2><p>引数が奇数か偶数かを判別するための function です。<code>odd($number)</code> の引数（$number）に渡した値がnumberでかつ奇数だった場合は <code>true</code> を返します。それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table></div><p>上記の場合、<code>3</code> 、<code>3px</code> 、<code>3%</code> 、<code>3em</code> は <code>number(type_of == number)</code> なので true を返します。</p><h2>number_list( )</h2><p>引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て number <code>type_of == number</code> かどうかを判別するための function です。<code>number( )</code> に渡した値が number だった場合は <code>true</code> を返します。それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre>number_list(3 3px)
+number_list(3px 3% 3px)
+</pre></td></tr></tbody></table></div><p>上記の場合、それぞれの渡された引数の変数リストの一つ一つの変数は全て <code>number(type_of == number)</code> なので <code>true</code> を返します。</p><h2>optional<em>number</em>list( )</h2><p>引数が color <code>type_of == number</code> 、もしくは、引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て color <code>type_of == number</code> かどうかを判別するための function です。</p><p>上記した、<code>number( )</code>　もしくは、<code>number_list( )</code> で、<code>true</code> を返す値を渡した場合、<code>optional_number_list( )</code> でも <code>true</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>optional_number_list(3)
+optional_number_list(3px)
+optional_number_list(3% 3px)
+optional_number_list(3em 3% 3px)
+</pre></td></tr></tbody></table></div><p>上記の場合、それぞれの渡された引数が、<code>number( )</code> で <code>true</code> を返す値、もしくは、<code>number_list( )</code> で <code>true</code> を返す値なので、 <code>true</code> を返します。</p><h2>odd( )</h2><p>引数が奇数か偶数かを判別するための function です。<code>odd($number)</code> の引数（$number）に渡した値がnumberでかつ奇数だった場合は <code>true</code> を返します。それ以外は <code>null</code> を返します。</p><div class="highlight plaintext"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4</pre></td><td class="code"><pre>odd(3)
