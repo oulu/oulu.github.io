@@ -18,7 +18,7 @@ html
     .wrapper
       .body
         main.main class=(local_nav? ? 'has-local-nav':'')
-          - if page?
+          - if page? and not category?
             article.article.is-page
               div class=(nav_page? ? 'nav-page__body':'article__body')
                 = yield
