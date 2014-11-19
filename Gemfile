@@ -19,7 +19,7 @@ gem 'i18n', '0.6.9'
 
 # Use oulu
 #gem 'middleman-oulu', path: '../middleman-oulu'
-gem 'middleman-oulu', '~> 0.5.6', github: 'oulu/middleman-oulu'
+gem 'middleman-oulu'
 gem 'slim'
 gem 'middleman-minify-html'
 gem 'middleman-syntax'
