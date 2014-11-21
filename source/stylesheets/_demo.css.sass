@@ -1,12 +1,26 @@
 .article__body
   .demo
     .demo-1
-      +text-block(24px 1.8 24px, bold red)
+      
+      +text-block(24px 1.8 24px, bold white)
+      background-color: black
+      +glitch(white, black)
     .demo-2
+      +inline-block
       background-color: red
-      +inline-block(bottom)
-      +relative
-      +balloon-tale(top red 12px 16px 0px, null, null)
+      +border(all, 8px solid blue)
+      +relative(3)
+      +rem('height', 260px)
+      +balloon-tale(left red 13px 4px 8px, top 12px, blue)
+      +text-block(3px)
+      +rem('margin', 10px 12px 14px)
+      +size(40px)
+
+
+
+
+
+
 
     .demo-3
       +relative
