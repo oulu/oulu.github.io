@@ -265,6 +265,96 @@ body {
 
 ## +is-ja
 
+セレクタ `class= "is-ja"` を持つ要素にスタイルをあてる適用させるための mixin です。
+
+### 基本的な使い方
+
+#### sass
+
+```sass
+
+blockquote
+  font-style: italic
+  +is-ja
+    font-style: normal
+
+```
+
+#### css
+
+```css
+blockquote {
+  font-style: italic;
+  }
+blockquote.is-ja {
+  font-style: normal;
+  }
+```
+
+## +is-en
+
+セレクタ `class= "is-en"` を持つ要素にスタイルをあてる適用させるための mixin です。
+
+### 基本的な使い方
+
+#### sass
+
+```sass
+
+blockquote
+  font-style: normal
+  +is-en
+    font-style: italic
+
+```
+
+#### css
+
+```css
+blockquote {
+  font-style: italic;
+  }
+blockquote.is-en {
+  font-style: normal;
+  }
+```
+
 ## +is-bold-ja
 
+セレクタ `class= "is-bold-ja"` を持つ要素にスタイルをあてる適用させるための mixin です。
+
+### 基本的な使い方
+
+#### sass
+
+```sass
+strong
+  font-weight: bold
+  +basic-font(false)
+  +is-bold-ja
+    +bold-ja(false)
+```
+
+#### css
+
+```css
+strong {
+  font-weight: bold;
+  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
+  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+  }
+strong.is-bold-ja {
+  font-family: "ヒラギノ角ゴ StdN", "Hiragino Kaku Gothic StdN", "メイリオ", Meiryo, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
+  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
+  font-weight: bold;
+  }
+```
+
 ## +webfont-ja-sans-selif
+
+日本語を含まない webfont をフォントファミリーにした場合、
+
+- 指定した webfont の `font weight` が `bold` だった場合は `is-bold-ja` というセレクタを作り、そのセレクタは `+basic-bold-font` を適用
+- 指定した webfont の `font weight` が `bold` ではない場合は `is-ja` というセレクタを作り、そのセレクタは `+basic-font` を適用
+
+するmixin です。
