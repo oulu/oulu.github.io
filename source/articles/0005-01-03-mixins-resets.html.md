@@ -4,91 +4,125 @@ last_update: 2014-10-06
 category: mixins
 ---
 
-## +basic-font( )
+## +reset-margin( )
 
-サイトで指定する基本的なフォント設定を呼び出すための mixin です。
+特定の位置の `margin` を `0` にする mixin です。
 
-### 引数
+- 第一引数に `0` にしたい `margin` の位置を渡します。渡す引数は `top` や `left` 単体の変数だけでなく、 `top left` のように複数の変数を持つ変数リストとしても渡せます。また、`top`、 `right` 、 `bottom` 、 `left` の他に、Oulu 独自の位置を指定するキーワードである `horizontal`（左右）、`vertical`（上下）、`all`（上下左右）も引数に渡せます。
 
-- 第一引数に `text-rendering: optimizelegibility` を出力するか否か（デフォルトでは `true` が指定されています）。
-
-を渡します。
-
-`+basic-font( )` は、
-
-- `font-family: $basic-sans-serif` 
-- `*font-family: $basic-legacy-ie-sans-serif`
-
-を主力します。
-
-グローバルな変数 `$basic-sans-serif`、`$basic-legacy-ie-sans-serif` にそれぞれフォントファミリーが設定されています。
-
-- `$basic-sans-serif` は基本的なフォント設定です。
-- `$basic-legacy-ie-sans-serif` はレガシーな ie のための基本的なフォント設定です。
-
-デフォルトでは、以下のフォントファミリーが設定されています。
-
-#### $basic-sans-serif
-
-```sass
-$basic-sans-serif: "Lucida Grande", "Lucida Sans Unicode", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif !default
-```
-
-#### $basic-legacy-ie-sans-serif
-
-```sass
-$basic-legacy-ie-sans-serif: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif !default
-```
-
-デフォルトのフォントファミリーを上書きする場合は、`$basic-sans-serif`、`$basic-legacy-ie-sans-serif` それぞれを上書きします。
-
-### 基本的な使い方
+### 使い方
 
 #### sass
 
 ```sass
-body
-  +basic-font
+p.left
+  +reset-margin(left)
+  
+p.top-left
+  +reset-margin(top left)
+
+p.horizontal
+  +reset-margin(horizontal)
+
+p.all
+  +reset-margin(all)
+
 ```
 
 #### css
 
-```sass
-body {
-  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
-  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
-  text-rendering: optimizelegibility;
-  }
+```css
+p.left {
+  margin-left: 0;
+}
+  
+p.top-left {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+p.horizontal {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+p.all {
+  margin: 0;
+}
+
 ```
 
-### text-rendering: optimizelegibility を出力しない場合
+## +reset-padding( )
 
-`text-rendering: optimizelegibility` を出力しない場合は、`+basic-font( )` の第一引数に `false` を渡します。
+特定の位置の `padding` を `0` にする mixin です。
+
+- 第一引数に `0` にしたい `padding` の位置を渡します。渡す引数は `top` や `left` 単体の変数だけでなく、 `top left` のように複数の変数を持つ変数リストとしても渡せます。また、`top`、 `right` 、 `bottom` 、 `left` の他に、Oulu 独自の位置を指定するキーワードである `horizontal`（左右）、`vertical`（上下）、`all`（上下左右）も引数に渡せます。
+
+### 使い方
 
 #### sass
 
 ```sass
-body
-  +basic-font(false)
+p.left
+  +reset-padding(left)
+  
+p.top-left
+  +reset-padding(top left)
+
+p.horizontal
+  +reset-padding(horizontal)
+
+p.all
+  +reset-padding(all)
+
 ```
 
 #### css
 
-```sass
-body {
-  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
-  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
-  }
+```css
+p.left {
+  padding-left: 0;
+}
+  
+p.top-left {
+  padding-top: 0;
+  padding-left: 0;
+}
+
+p.horizontal {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+p.all {
+  padding: 0;
+}
+
 ```
 
-## +sans-serif( )
+## +reset-all
 
-## +bold-ja( )
+すべての位置の `margin`、 `padding` 両方を `0` にする mixin です。
 
-## +serif( )
 
-## +is-ja
+### 使い方
 
-## +is-bold-ja
+#### sass
 
-## +webfont-ja-sans-selif
+```sass
+p
+  +reset-all
+
+```
+
+#### css
+
+```css
+p {
+  margin: 0;
+  padding: 0;
+}
+
+```

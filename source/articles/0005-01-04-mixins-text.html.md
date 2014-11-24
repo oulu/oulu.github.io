@@ -4,45 +4,37 @@ last_update: 2014-10-06
 category: mixins
 ---
 
-## +basic-font( )
+## +text-block( )
 
-サイトで指定する基本的なフォント設定を呼び出すための mixin です。
+文字に関するスタイルを一行で指定するための mixin です。スタイルをあてたい文字をブロックとして考えられるように設計されています。
+
+単位 `px` で指定した値は `rem` と `px` が同時に出力されます（`px` でも出力されるのは `rem` が使えないブラウザでも対応させるため）。
+
 
 ### 引数
 
-- 第一引数に `text-rendering: optimizelegibility` を出力するか否か（デフォルトでは `true` が指定されています）。
+- 第一引数で基本的な設定を指定します。第一引数はスペース区切りの変数リストを渡します。
+  - 一番目には `font-size` の値を渡します。指定しない場合は `null` を渡します。
+  - 二番目には `line-height` の値を渡します。指定しない場合は `null` を渡します。
+  - 三番目には `margin-bottom` の値を渡します。指定しない場合は何も値も渡しません。
+- 第二引数ではオプション的な設定を指定します。第二引数もスペース区切りの変数リストを渡します。第二引数は、渡す変数リストの値の順番は関係ありません。値を判断して自動的にプロパティに紐付けられます。
+  - `font-color`
+  - `font-style`
+  - `font-weight`
+  - 文字の高さの位置調整
 
-を渡します。
+#### 文字の高さの位置調整
 
-`+basic-font( )` は、
-
-- `font-family: $basic-sans-serif` 
-- `*font-family: $basic-legacy-ie-sans-serif`
-
-を主力します。
-
-グローバルな変数 `$basic-sans-serif`、`$basic-legacy-ie-sans-serif` にそれぞれフォントファミリーが設定されています。
-
-- `$basic-sans-serif` は基本的なフォント設定です。
-- `$basic-legacy-ie-sans-serif` はレガシーな ie のための基本的なフォント設定です。
-
-デフォルトでは、以下のフォントファミリーが設定されています。
-
-#### $basic-sans-serif
+第二引数に単位 `px` の値が渡された場合は以下のスタイルが適用されます。
 
 ```sass
-$basic-sans-serif: "Lucida Grande", "Lucida Sans Unicode", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif !default
+position: relative
+top: 渡された単位 px の値
 ```
 
-#### $basic-legacy-ie-sans-serif
+スタイルをあてたい文字のブロックの y 軸方向の位置調整を行います。
 
-```sass
-$basic-legacy-ie-sans-serif: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif !default
-```
-
-デフォルトのフォントファミリーを上書きする場合は、`$basic-sans-serif`、`$basic-legacy-ie-sans-serif` それぞれを上書きします。
-
-### 基本的な使い方
+### 使い方
 
 #### sass
 
@@ -60,37 +52,3 @@ body {
   text-rendering: optimizelegibility;
   }
 ```
-
-### text-rendering: optimizelegibility を出力しない場合
-
-`text-rendering: optimizelegibility` を出力しない場合は、`+basic-font( )` の第一引数に `false` を渡します。
-
-#### sass
-
-```sass
-body
-  +basic-font(false)
-```
-
-#### css
-
-```sass
-body {
-  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
-  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
-  }
-```
-
-## +sans-serif( )
-
-
-
-## +bold-ja( )
-
-## +serif( )
-
-## +is-ja
-
-## +is-bold-ja
-
-## +webfont-ja-sans-selif
