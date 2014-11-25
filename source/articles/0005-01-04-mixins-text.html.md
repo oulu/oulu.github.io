@@ -39,16 +39,84 @@ top: 渡された単位 px の値
 #### sass
 
 ```sass
-body
-  +basic-font
+p
+  +text-block(14px 1.8 1.4em, black)
+
+h1
+  +text-block(22px 24px 24px, blue bold center)
+
+h2
+  +text-block(18px 1.6 16px, red bold center 4px)
 ```
 
 #### css
 
+```css
+p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 1.4em;
+    color: black;
+    }
+
+h1 {
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 24px;
+    line-height: 2.4rem;
+    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+    }
+
+h2 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    margin-bottom: 1.6rem;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 4px;
+    top: 0.4rem;
+   }
+```
+
+## +letter-spacing-center( )
+
+`text-arign: center` のときに `letter-spacing` を設定した場合、スペースが右側にしか出来ないため、文字が中央から `letter-spacing` の分だけ左にずれてしまうのを `text-indent` で修正するための mixin です。
+
+単位 `px` で指定した値は `rem` と `px` が同時に出力されます（`px` でも出力されるのは `rem` が使えないブラウザでも対応させるため）。
+
+
+### 引数
+
+- 第一引数に文字と文字のスペースの値を渡します
+
+### 使い方
+
+#### sass
+
 ```sass
-body {
-  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
-  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
-  text-rendering: optimizelegibility;
+h1
+  text-align: center
+  +letter-spacing-center(4px)
+
+```
+
+#### css
+
+```css
+h1 {
+  text-align: center;
+  letter-spacing: 4px;
+  letter-spacing: 0.4rem;
+  text-indent: 4px;
+  text-indent: 0.4rem;
   }
 ```

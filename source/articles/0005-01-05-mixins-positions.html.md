@@ -1,12 +1,12 @@
 ---
-title: text
+title: positions
 last_update: 2014-10-06
 category: mixins
 ---
 
-## +basic-font( )
+## +absolute( )
 
-サイトで指定する基本的なフォント設定を呼び出すための mixin です。
+`position: absolute` の場合の位置（`top` 、`right` 、`bottom` 、`left`）、`z-index` の値を一行で書くための mixin です。
 
 ### 引数
 
@@ -28,69 +28,10 @@ category: mixins
 
 デフォルトでは、以下のフォントファミリーが設定されています。
 
-#### $basic-sans-serif
 
-```sass
-$basic-sans-serif: "Lucida Grande", "Lucida Sans Unicode", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif !default
-```
-
-#### $basic-legacy-ie-sans-serif
-
-```sass
-$basic-legacy-ie-sans-serif: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif !default
-```
-
-デフォルトのフォントファミリーを上書きする場合は、`$basic-sans-serif`、`$basic-legacy-ie-sans-serif` それぞれを上書きします。
-
-### 基本的な使い方
-
-#### sass
-
-```sass
-body
-  +basic-font
-```
-
-#### css
-
-```sass
-body {
-  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
-  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
-  text-rendering: optimizelegibility;
-  }
-```
-
-### text-rendering: optimizelegibility を出力しない場合
-
-`text-rendering: optimizelegibility` を出力しない場合は、`+basic-font( )` の第一引数に `false` を渡します。
-
-#### sass
-
-```sass
-body
-  +basic-font(false)
-```
-
-#### css
-
-```sass
-body {
-  font-family: "Helvetica Neue", "Helvetica", Roboto, "Droid Sans", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Helvetica, Arial, Verdana, sans-serif;
-  *font-family: "ＭＳ Ｐゴシック", "Lucida Sans Unicode", sans-serif;
-  }
-```
-
-## +sans-serif( )
-
-
-
-## +bold-ja( )
-
-## +serif( )
-
-## +is-ja
-
-## +is-bold-ja
-
-## +webfont-ja-sans-selif
+## +fixed( )
+## +relative( )
+## +top( )
+## +bottom( )
+## +left( )
+## +right( )
