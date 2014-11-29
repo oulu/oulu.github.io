@@ -103,7 +103,7 @@ unitless_number(2%)
 unitless_number(2em)
 ```
 
-この場合、`2px` 、`2%`、`2em` は単位がある number なので `null` を返します。
+この場合、`2px` 、`2%`、`2em` は単位がある number なので `true` を返します。
 
 ## px( )
 
@@ -113,7 +113,7 @@ unitless_number(2em)
 px(2px)
 ```
 
-この場合、`2px` は単位が px の number なので `null` を返します。
+この場合、`2px` は単位が px の number なので `true` を返します。
 
 ## em( )
 
@@ -123,7 +123,7 @@ px(2px)
 em(2em)
 ```
 
-この場合、`2px` は単位が em の number なので `null` を返します。
+この場合、`2em` は単位が em の number なので `true` を返します。
 
 ## percent( )
 
@@ -133,7 +133,8 @@ em(2em)
 percent(2%)
 ```
 
-この場合、`2%` は単位が % の number なので `null` を返します。
+この場合、`2%` は単位が % の number なので `true` を返します。
+
 
 ## px\_to\_em( )
 
