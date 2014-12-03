@@ -21,6 +21,7 @@ category: mixins
   - `font-color`
   - `font-style`
   - `font-weight`
+  - `white-space`
   - 文字の高さの位置調整
 
 #### 文字の高さの位置調整

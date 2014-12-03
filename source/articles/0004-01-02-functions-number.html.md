@@ -31,7 +31,7 @@ number_list(3px 3% 3px)
 
 上記の場合、それぞれの渡された引数の変数リストの一つ一つの変数は全て `number(type_of == number)` なので `true` を返します。
 
-## optional_number_list( )
+## optional\_number\_list( )
 
 
 引数が color `type_of == number` 、もしくは、引数が変数リストでかつ、そのリストの中の変数の一つ一つが全て color `type_of == number` かどうかを判別するための function です。
@@ -86,6 +86,19 @@ strip_unit(2em)
 
 この場合、全て `2` を返します。
 
+## unit_number( )
+
+引数が単位のある number かどうかを判別するための function です。`unit_number( )` に渡した引数（ ）がnumberでかつ、単位がある場合、`true` を返します。それ以外は `null` を返します。
+
+```
+unit_number(2px)
+unit_number(2%)
+unit_number(2em)
+```
+
+この場合、`2px` 、`2%` 、`2em` は単位がある number なので `true` を返します。
+
+
 ## unitless_number( )
 
 引数が単位のない number かどうかを判別するための function です。`unitless_number( )` に渡した引数（ ）がnumberでかつ、単位がない場合、`true` を返します。それ以外は `null` を返します。
@@ -97,13 +110,6 @@ unitless_number(0.2)
 
 この場合、`2` 、`0.2` は単位がない number なので `true` を返します。
 
-```
-unitless_number(2px)
-unitless_number(2%)
-unitless_number(2em)
-```
-
-この場合、`2px` 、`2%`、`2em` は単位がある number なので `true` を返します。
 
 ## px( )
 

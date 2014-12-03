@@ -3,7 +3,7 @@
   strong
     font-weight: bold
     +basic-font
-    +is-bold-ja
+    .is-bold-ja
       +bold-ja
 .article__header
   +rem('margin-bottom', 16px)
@@ -92,8 +92,7 @@
             +rgba-background-inline(rgba(0 ,0 ,0 , luma($base-color)/200))
   p
     +text-block(14px 1.8 1.6em)
-  +screen-xs
-    p
+    +screen-xs
       +text-block(13px 1.8 1.4em)
   a
     color: $article-link-color
