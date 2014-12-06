@@ -4,7 +4,7 @@ last_update: 2014-10-06
 category: functions
 ---
 
-## text_align()
+## text_align( )
 
 渡された引数が css プロパティ `text-align` で使用できる値か否かを判別するための function です。`left` `right` `center` のいずれかの場合、`true` を返します。それ以外は `null` を返します。
 
@@ -19,7 +19,7 @@ text_align($value)
 上記の場合、`text_align()` に渡された引数は css プロパティ `text-align` で使用できる値なので、 `true` を返します。
 
 
-## font_weight()
+## font_weight( )
 
 渡された引数が css プロパティ `font-weight` で使用できる値か否かを判別するための function です。`bold` `normal` `100以上の単位のない数字` のいずれかの場合、`true` を返します。それ以外は `null` を返します。
 
@@ -35,7 +35,7 @@ text_align($value)
 上記の場合、`text_weight()` に渡された引数は css プロパティ `font_weight` で使用できる値なので、 `true` を返します。
 
 
-## font_style()
+## font_style( )
 
 渡された引数が css プロパティ `font-style` で使用できる値か否かを判別するための function です。`normal` `italic` `oblique` のいずれかの場合、`true` を返します。それ以外は `null` を返します。
 
@@ -50,7 +50,7 @@ text_align($value)
 上記の場合、`text_weight()` に渡された引数は css プロパティ `font_weight` で使用できる値なので、 `true` を返します。
 
 
-## list_style_type()
+## list_style_type( )
 
 渡された引数が css プロパティ `list-style-type` で使用できる値か否かを判別するための function です。
 
