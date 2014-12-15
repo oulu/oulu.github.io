@@ -1,6 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1" name="viewport"/><link href="../../../stylesheets/application.css" rel="stylesheet"/><link href="../../../stylesheets/highlight.css" rel="stylesheet"/><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/><script src="//code.jquery.com/jquery-latest.min.js"></script><script src="../../../javascripts/all.js"></script><title>Oulu</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/articles/feed.xml"/></head><body><i class="fa fa-bars open-global-nav-icon js-open-slide-nav visible-xs-block"></i><nav class="global-nav js-slide-nav"><i class="fa fa-times js-open-slide-nav visible-xs-block global-nav__close-icon"></i><div class="wrapper"><div class="global-nav__wrapper"><h1 class="global-nav__site-title"><a data-text="Oulu" class="global-nav__site-title-link is-en is-sm " href="/"><img class="is-image" width="320" height="441" src="../../../images/logo.png"/><span class="is-title">Oulu</span></a></h1><ul class="global-nav__items"><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/install.html">Install</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/functions.html">Functions</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/mixins.html">Mixins</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/helpers.html">Helpers</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/articles/blog.html">Blog</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/contribute.html">Contribute</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/demo.html">Demo</a></li></ul></div></div></nav><header class="title"><div class="wrapper title__wrapper"></div></header><div class="wrapper"><div class="body"><main class="main has-local-nav"><header class="page-header"><h1 class="page-header__title is-en"> Archive for&nbsp;5 </h1></header><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/11.html"><i class="fa fa-angle-left"></i></a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/10.html">10</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/11.html">11</a></li><li class="pagenate__item is-en"><span class="pagenate__current">12</span></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/13.html">13</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/14.html">14</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/13.html"><i class="fa fa-angle-right"></i></a></li></ul></div></div><article class="article"><article class="article"><div class="article__header"><h1 class="article__title"><a class="article__title-link is-en" href="/articles/mixins/mixins-list.html">list</a></h1><p class="article__last-update is-en"><span class="is-label">last update</span><span class="is-date">2014/10/06</span></p></div><div class="article__body"><h2>+list( )</h2><p>リストタグ <code>ol</code> 、 <code>ul</code> と、その中の <code>li</code> タグのスタイルを一行で書くための <code>mixin</code> です。</p><h3>引数</h3><ul><li>第一引数にリストの margin の値を渡します。 <ul><li>1番目の値に <code>margin-left</code> の値を渡します。</li><li>2番目の値に <code>margin-bottom</code> の値を渡します。</li></ul></li><li>第二引数に <code>list_style_type</code> と <code>list_style_position</code> の値をスペース区切りで渡します。順番は関係ありません。第二引数の1番目の値に <code>fa</code> という値を渡した場合、 <code>list_style_type</code> の記号の代わりに <code>font-awsome</code> のアイコンが使われます。 <ul><li>1番目の値に <code>fa</code> という値を渡した場合、 <code>list_style_type</code> の記号の代わりに <code>font-awsome</code> のアイコンが使われます。</li><li>1番目の値に <code>fa</code> という値を渡した場合、2番目の値に <code>\f192</code> など <code>font-awsome</code> の任意のアイコンの Unicode の値を渡します。</li></ul></li><li>第二引数に <code>fa</code> を渡した場合の、アイコンの位置の値を渡します。 <ul><li>1番目の値にアイコンサイズの値を渡します。</li><li>2番目の値にアイコンの y 軸の位置の値を渡します。</li><li>3番目の値にアイコンの x 軸の位置の値を渡します。</li></ul></li></ul><h3>例 1</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nt">ol</span>
-  <span class="nd">+list</span><span class="p">(</span><span class="m">12px</span> <span class="m">24px</span><span class="o">,</span> <span class="nb">decimal</span> <span class="nb">outside</span><span class="p">)</span>
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1" name="viewport"/><link href="../../../stylesheets/application.css" rel="stylesheet"/><link href="../../../stylesheets/highlight.css" rel="stylesheet"/><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/><script src="//code.jquery.com/jquery-latest.min.js"></script><script src="../../../javascripts/all.js"></script><title>Oulu</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/articles/feed.xml"/></head><body><i class="fa fa-bars open-global-nav-icon js-open-slide-nav visible-xs-block"></i><nav class="global-nav js-slide-nav"><i class="fa fa-times js-open-slide-nav visible-xs-block global-nav__close-icon"></i><div class="wrapper"><div class="global-nav__wrapper"><h1 class="global-nav__site-title"><a data-text="Oulu" class="global-nav__site-title-link is-en is-sm " href="/"><img class="is-image" width="320" height="441" src="../../../images/logo.png"/><span class="is-title">Oulu</span></a></h1><ul class="global-nav__items"><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/install.html">Install</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/functions.html">Functions</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/mixins.html">Mixins</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/helpers.html">Helpers</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/articles/blog.html">Blog</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/contribute.html">Contribute</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/demo.html">Demo</a></li></ul></div></div></nav><header class="title"><div class="wrapper title__wrapper"></div></header><div class="wrapper"><div class="body"><main class="main has-local-nav"><header class="page-header"><h1 class="page-header__title is-en"> Archive for&nbsp;5 </h1></header><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/11.html"><i class="fa fa-angle-left"></i></a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/10.html">10</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/11.html">11</a></li><li class="pagenate__item is-en"><span class="pagenate__current">12</span></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/13.html">13</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/14.html">14</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/13.html"><i class="fa fa-angle-right"></i></a></li></ul></div></div><article class="article"><article class="article"><div class="article__header"><h1 class="article__title"><a class="article__title-link is-en" href="/articles/mixins/mixins-table.html">table</a></h1><p class="article__last-update is-en"><span class="is-label">last update</span><span class="is-date">2014/10/06</span></p></div><div class="article__body"><h2>+table-row( )</h2><p><code>table</code> タグ内の <code>tr</code> タグのための <code>mixin</code> です。 <code>background-color</code> と <code>border</code> が一行で設定できます。</p><h3>引数</h3><ul><li>第一引数に <code>color</code> の値を渡すと、その色が <code>background-color</code> になります。2つの <code>color</code> をスペース区切りで渡すと、 <code>&amp;:nth-child(odd)</code> と <code>&amp;:nth-child(even)</code> で2つの色が交互に指定されます。</li><li>第二引数に <code>tr</code> に適用する <code>border</code> の値を渡します。 第二引数全体を <code>( )</code> （カッコ）で囲い、<code>border</code> の方向を渡し、そのあとに<code>,</code> （カンマ）、そのあとに <code>border-style</code> 、<code>border-width</code> 、 <code>border-color</code> の値をスペース区切りで渡します。<code>border-style</code> 、<code>border-width</code> 、 <code>border-color</code> の値の順番は関係なく渡すことができます。この書式は <code>+border( )</code> と同じです。</li></ul><h3>例</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nt">tr</span>
+  <span class="nd">+table-row</span><span class="p">(</span><span class="no">white</span> <span class="mh">#eeeeee</span><span class="o">,</span> <span class="p">(</span><span class="nb">bottom</span><span class="o">,</span> <span class="nb">solid</span> <span class="m">1px</span> <span class="no">black</span><span class="p">))</span>
 </pre></td></tr></tbody></table></div><h4>css</h4><div class="highlight css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -8,17 +8,33 @@
 5
 6
 7
-8</pre></td><td class="code"><pre><span class="nt">ol</span> <span class="p">{</span>
-  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
-  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">2rem</span><span class="p">;</span>
-  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
-  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">2</span><span class="p">.</span><span class="n">4rem</span><span class="p">;</span>
-  <span class="nl">list-style-type</span><span class="p">:</span> <span class="nb">decimal</span><span class="p">;</span>
-  <span class="nl">list-style-position</span><span class="p">:</span> <span class="nb">outside</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></div><h3>例 2</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nt">ul</span>
-  <span class="nd">+list</span><span class="p">(</span><span class="m">12px</span> <span class="m">24px</span><span class="o">,</span> <span class="n">fa</span> <span class="s1">'\f192'</span><span class="o">,</span> <span class="m">12px</span> <span class="m">3px</span> <span class="m">8px</span><span class="p">)</span>
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="nt">tr</span> <span class="p">{</span>
+  <span class="nl">border-bottom-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-bottom-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-bottom-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">odd</span><span class="o">)</span> <span class="p">{</span>
+  <span class="py">background-colorl</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nt">tr</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">even</span><span class="o">)</span> <span class="p">{</span>
+  <span class="py">background-colorl</span><span class="p">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+  <span class="p">}</span>
+
+</pre></td></tr></tbody></table></div><h2>+table-cell( )</h2><p><code>table</code> タグ内の <code>td</code> もしくは <code>th</code> タグのための <code>mixin</code> です。 cell と <code>border</code> 、 <code>font</code> と <code>text</code> のスタイルが一行で設定できます。</p><h3>引数</h3><ul><li>第一引数に cell の基本設定の値を渡します。基本設定の内容は以下になります。基本設定は順番は関係ありません。 <ul><li>padding 、書式は <code>+padding( )</code> と同じ書き方で、値を <code>()</code> （カッコ）で囲います。</li><li>white-space</li><li>background-color</li><li>vertical-align</li></ul></li><li>第二引数に <code>font</code> と <code>text</code> の設定を渡します。書式は <code>+textblock( )</code> と同じ書き方で、値を <code>()</code> （カッコ）で囲います。</li><li>第三引数に <code>border</code> の設定を渡します。書式は <code>+border( )</code> と同じ書き方で、値を <code>()</code> （カッコ）で囲います。</li></ul><h3>例</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="nt">th</span>
+  <span class="nd">+table-cell</span><span class="p">(</span><span class="nf">middle</span> <span class="p">(</span><span class="m">12px</span> <span class="m">16px</span><span class="p">)</span> <span class="nb">nowrap</span> <span class="no">white</span><span class="o">,</span> <span class="p">(</span><span class="m">14px</span> <span class="m">1</span><span class="mi">.8</span><span class="o">,</span> <span class="no">black</span> <span class="nb">bold</span> <span class="nb">center</span><span class="p">)</span><span class="o">,</span> <span class="p">(</span><span class="nb">bottom</span><span class="o">,</span> <span class="nb">solid</span> <span class="m">1px</span> <span class="no">black</span><span class="p">))</span>
+
+<span class="nt">td</span>
+  <span class="nd">+table-cell</span><span class="p">(</span><span class="nf">top</span> <span class="p">(</span><span class="nb">left</span> <span class="nb">bottom</span><span class="o">,</span> <span class="m">12px</span> <span class="m">16px</span><span class="p">)</span> <span class="nb">nowrap</span> <span class="no">white</span><span class="o">,</span> <span class="p">(</span><span class="m">16px</span> <span class="m">24px</span><span class="o">,</span> <span class="no">black</span> <span class="nb">bold</span> <span class="nb">right</span><span class="p">)</span><span class="o">,</span> <span class="p">(</span><span class="n">all</span><span class="o">,</span> <span class="nb">solid</span> <span class="m">2px</span> <span class="no">black</span><span class="p">))</span>
 </pre></td></tr></tbody></table></div><h4>css</h4><div class="highlight css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -49,35 +65,55 @@
 28
 29
 30
-31</pre></td><td class="code"><pre><span class="nt">ul</span> <span class="p">{</span>
-  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
-  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">2rem</span><span class="p">;</span>
-  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
-  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">2</span><span class="p">.</span><span class="n">4rem</span><span class="p">;</span>
-  <span class="nl">list-style-type</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></td><td class="code"><pre><span class="nt">th</span> <span class="p">{</span>
+  <span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">middle</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">12px</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">2rem</span> <span class="m">1</span><span class="p">.</span><span class="n">6rem</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">4rem</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.8</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">border-bottom-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-bottom-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-bottom-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-bottom-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span> <span class="p">{</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="n">2rem</span><span class="p">;</span>
+
+<span class="nt">td</span> <span class="p">{</span>
+  <span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+  <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">6rem</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">2</span><span class="p">.</span><span class="n">4rem</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+  <span class="nl">border-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-width</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span>
+  <span class="nl">border-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">2rem</span><span class="p">;</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nd">:before</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="n">FontAwesome</span><span class="p">;</span>
-  <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
-  <span class="nl">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
-  <span class="nl">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">2rem</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="p">.</span><span class="n">2rem</span><span class="p">;</span>
-  <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-  <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">3rem</span><span class="p">;</span>
-<span class="p">}</span>
+
 </pre></td></tr></tbody></table></div></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></article><div class="pagenate"><div class="pagenate__wrapper wrapper"><ul class="pagenate__items"><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/11.html"><i class="fa fa-angle-left"></i></a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/10.html">10</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/11.html">11</a></li><li class="pagenate__item is-en"><span class="pagenate__current">12</span></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/13.html">13</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/14.html">14</a></li><li class="pagenate__item is-en"><a class="pagenate__link" href="/articles/5/page/13.html"><i class="fa fa-angle-right"></i></a></li></ul></div></div></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"></ul></nav></div></div></div><footer class="footer" id="footer"><div class="wrapper"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2014</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
