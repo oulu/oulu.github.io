@@ -169,7 +169,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></div><h2>+transition( )</h2><p>css <code>transition</code> に関するスタイルを一行で書くための mixin です。</p><h3>引数</h3><ul><li>第一引数に <code>transition-name</code> 、 <code>transition-duration</code> 、 <code>transition-timing-function</code> 、 <code>transition-delay</code> の値をスペース区切りで渡します。順番は関係ありません。<code>transition-delay</code> の値だけ oulu 独自のルールがあり、値の前に <code>/</code> （スラッシュ）を付ける必要があります。</li></ul><h3>例</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nc">.div-1</span>
+2</pre></td><td class="code"><pre><span class="nt">div</span>
   <span class="nd">+transition</span><span class="p">(</span><span class="mi">.5s</span> <span class="p">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="p">)</span> <span class="nf">ease-in</span> <span class="p">(</span><span class="o">/</span> <span class="m">1s</span><span class="p">))</span>
 </pre></td></tr></tbody></table></div><h4>css</h4><div class="highlight css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -188,7 +188,7 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="nc">.div-1</span> <span class="p">{</span>
+18</pre></td><td class="code"><pre><span class="nt">div</span> <span class="p">{</span>
   <span class="nl">-moz-transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
   <span class="nl">-o-transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
   <span class="nl">-webkit-transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
@@ -206,9 +206,9 @@
   <span class="nl">-webkit-transition-delay</span><span class="p">:</span> <span class="m">1s</span><span class="p">;</span>
   <span class="nl">transition-delay</span><span class="p">:</span> <span class="m">1s</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></td></tr></tbody></table></div><h2>+animations( )</h2><p>css <code>animation</code> に関するスタイルを一行で書くための mixin です。</p><h3>引数</h3><ul><li>第一引数に <code>transition-name</code> 、 <code>transition-duration</code> 、 <code>transition-timing-function</code> 、 <code>transition-delay</code> の値をスペース区切りで渡します。順番は関係ありません。<code>transition-delay</code> の値だけ oulu 独自のルールがあり、値の前に <code>/</code> （スラッシュ）を付ける必要があります。</li></ul><h3>例</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2</pre></td><td class="code"><pre><span class="nc">.div-1</span>
-  <span class="nd">+transition</span><span class="p">(</span><span class="mi">.5s</span> <span class="p">(</span><span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="p">)</span> <span class="nf">ease-in</span> <span class="p">(</span><span class="o">/</span> <span class="m">1s</span><span class="p">))</span>
+</pre></td></tr></tbody></table></div><h2>+animations( )</h2><p>css <code>animation</code> に関するスタイルを一行で書くための mixin です。</p><h3>引数</h3><ul><li>第一引数に <code>animation-name</code> 、 <code>animation-duration</code> 、 <code>animation-timing-function</code> 、 <code>animation-delay</code> 、 <code>animation-iteration-count</code> 、<code>animation-direction</code> 、 <code>animation_fill_mode</code> 、 <code>animation-play-states</code> の値をスペース区切りで渡します。順番は関係ありません。<code>animation-delay</code> の値だけ oulu 独自のルールがあり、値の前に <code>/</code> （スラッシュ）を付ける必要があります。</li><li>複数の animation を設定する場合、第二引数にも第一引数と同じように animation の値をスペース区切りで渡します。最大10個まで animation を設定することができます。</li></ul><h3>例</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="nt">div</span>
+  <span class="nd">+animations</span><span class="p">(</span><span class="n">animation-1</span> <span class="m">5s</span> <span class="nf">ease</span> <span class="p">(</span><span class="o">/</span><span class="m">2s</span><span class="p">)</span> <span class="n">infinite</span> <span class="n">alternate</span> <span class="n">nonel</span><span class="o">,</span> <span class="n">animation-2</span> <span class="m">3s</span> <span class="nf">linear</span> <span class="p">(</span><span class="o">/</span><span class="m">1s</span><span class="p">)</span> <span class="m">2</span> <span class="nb">normal</span> <span class="n">forwards</span><span class="p">)</span>
 </pre></td></tr></tbody></table></div><h4>css</h4><div class="highlight css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -226,22 +226,32 @@
 15
 16
 17
-18</pre></td><td class="code"><pre><span class="nc">.div-1</span> <span class="p">{</span>
-  <span class="nl">-moz-transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
-  <span class="nl">-o-transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
-  <span class="nl">-webkit-transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
-  <span class="nl">transition-duration</span><span class="p">:</span> <span class="m">0.5s</span><span class="p">;</span>
-  <span class="nl">-moz-transition-property</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
-  <span class="nl">-o-transition-property</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
-  <span class="nl">-webkit-transition-property</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">;</span>
-  <span class="nl">transition-property</span><span class="p">:</span> <span class="n">width</span> <span class="n">height</span><span class="p">;</span>
-  <span class="nl">-moz-transition-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
-  <span class="nl">-o-transition-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
-  <span class="nl">-webkit-transition-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
-  <span class="nl">transition-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
-  <span class="nl">-moz-transition-delay</span><span class="p">:</span> <span class="m">1s</span><span class="p">;</span>
-  <span class="nl">-o-transition-delay</span><span class="p">:</span> <span class="m">1s</span><span class="p">;</span>
-  <span class="nl">-webkit-transition-delay</span><span class="p">:</span> <span class="m">1s</span><span class="p">;</span>
-  <span class="nl">transition-delay</span><span class="p">:</span> <span class="m">1s</span><span class="p">;</span>
+18
+19
+20
+21
+22
+23</pre></td><td class="code"><pre><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">-moz-animation-name</span><span class="p">:</span> <span class="n">animation-1</span><span class="p">,</span> <span class="n">animation-2</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-name</span><span class="p">:</span> <span class="n">animation-1</span><span class="p">,</span> <span class="n">animation-2</span><span class="p">;</span>
+  <span class="nl">animation-name</span><span class="p">:</span> <span class="n">animation-1</span><span class="p">,</span> <span class="n">animation-2</span><span class="p">;</span>
+  <span class="nl">-moz-animation-duration</span><span class="p">:</span> <span class="m">5s</span><span class="p">,</span> <span class="m">3s</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-duration</span><span class="p">:</span> <span class="m">5s</span><span class="p">,</span> <span class="m">3s</span><span class="p">;</span>
+  <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">5s</span><span class="p">,</span> <span class="m">3s</span><span class="p">;</span>
+  <span class="nl">-moz-animation-timing-function</span><span class="p">:</span> <span class="n">ease</span><span class="p">,</span> <span class="n">linear</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-timing-function</span><span class="p">:</span> <span class="n">ease</span><span class="p">,</span> <span class="n">linear</span><span class="p">;</span>
+  <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">ease</span><span class="p">,</span> <span class="n">linear</span><span class="p">;</span>
+  <span class="nl">-moz-animation-delay</span><span class="p">:</span> <span class="m">2s</span><span class="p">,</span> <span class="m">1s</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-delay</span><span class="p">:</span> <span class="m">2s</span><span class="p">,</span> <span class="m">1s</span><span class="p">;</span>
+  <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">2s</span><span class="p">,</span> <span class="m">1s</span><span class="p">;</span>
+  <span class="nl">-moz-animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">,</span> <span class="m">2</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">,</span> <span class="m">2</span><span class="p">;</span>
+  <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">,</span> <span class="m">2</span><span class="p">;</span>
+  <span class="nl">-moz-animation-direction</span><span class="p">:</span> <span class="n">alternate</span><span class="p">,</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-direction</span><span class="p">:</span> <span class="n">alternate</span><span class="p">,</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">animation-direction</span><span class="p">:</span> <span class="n">alternate</span><span class="p">,</span> <span class="nb">normal</span><span class="p">;</span>
+  <span class="nl">-moz-animation-fill-mode</span><span class="p">:</span> <span class="n">nonel</span><span class="p">,</span> <span class="n">forwards</span><span class="p">;</span>
+  <span class="nl">-webkit-animation-fill-mode</span><span class="p">:</span> <span class="n">nonel</span><span class="p">,</span> <span class="n">forwards</span><span class="p">;</span>
+  <span class="nl">animation-fill-mode</span><span class="p">:</span> <span class="n">nonel</span><span class="p">,</span> <span class="n">forwards</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></div></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-rem.html">rem</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-basic-font.html">basic-font</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-resets.html">resets</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-text.html">text</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-position.html">position</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-block.html">block</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-link.html">link</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-border.html">border</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-table.html">table</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-list.html">list</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-color.html">color</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-overlay.html">overlay</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-balloon-tale.html">balloon-tale</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-margin-padding.html">margin-padding</a></li><li class="local-nav__item"><a class="local-nav__link is-current is-en" href="/articles/mixins/mixins-animation.html">animation</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-grids.html">grids</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-responsive-utilities.html">table</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-background.html">table</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-line.html">table</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-button.html">table</a></li></ul></nav></div></div></div><footer class="footer" id="footer"><div class="wrapper"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2014</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
