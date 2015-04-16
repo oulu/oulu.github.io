@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta content="width=device-width,initial-scale=1" name="viewport"/><link href="../../stylesheets/application.css" rel="stylesheet"/><link href="../../stylesheets/highlight.css" rel="stylesheet"/><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/><script src="//code.jquery.com/jquery-latest.min.js"></script><script src="../../javascripts/all.js"></script><title>Oulu - balloon-tail</title><link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/articles/feed.xml"/></head><body><i class="fa fa-bars open-global-nav-icon js-open-slide-nav visible-xs-block"></i><nav class="global-nav js-slide-nav"><i class="fa fa-times js-open-slide-nav visible-xs-block global-nav__close-icon"></i><div class="container"><div class="global-nav__wrapper"><h1 class="global-nav__site-title"><a data-text="Oulu" class="global-nav__site-title-link is-en is-sm " href="/"><img class="is-image" width="320" height="441" src="../../images/logo.png"/><span class="is-title">Oulu</span></a></h1><ul class="global-nav__items"><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/install.html">Install</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/functions.html">Functions</a></li><li class="global-nav__item"><a class="global-nav__link is-current is-en" href="/pages/mixins.html">Mixins</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/helpers.html">Helpers</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/articles/blog.html">Blog</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/contribute.html">Contribute</a></li><li class="global-nav__item"><a class="global-nav__link is-en" href="/pages/demo.html">Demo</a></li></ul></div></div></nav><header class="title"><div class="container title__wrapper"><h1 class="title__title is-en"> Mixins </h1></div></header><div class="container"><div class="body"><main class="main has-local-nav"><article class="article"><div class="article__header"><h1 class="article__title"><a class="article__title-link is-en" href="/articles/mixins/mixins-balloon-tail.html">balloon-tail</a></h1><p class="article__last-update is-en"><span class="is-label">last update</span><span class="is-date">2015/04/16</span></p></div><div class="article__body"><h2>+balloon-tail( )</h2><p>css の <code>border</code> を使って三角形の吹き出しの尻尾を作るための mixin です。</p><h3>引数</h3><ul><li>第一引数に <code>border</code> の基本設定の値を渡します。 <ul><li>1番目の値に尻尾の方向</li><li>2番目の値に尻尾の色</li><li>3番目の値に尻尾の横幅</li><li>4番目の値に尻尾の高さ</li><li>5番目の値に尻尾を持つ親のボックスの <code>border</code> の <code>width</code></li></ul></li><li>第二引数に尻尾の位置の値を渡します。第二引数が <code>null</code> の場合は第一引数で渡した尻尾の方向の逆の辺にの中央に配置されます。 <ul><li>1番目の値に尻尾の位置の方向</li><li>2番目の値に1番目の値の数値</li><li>3番目の値に尻尾の位置の方向</li><li>4番目の値に1番目の値の数値</li></ul></li><li>第三引数は <code>border</code> を持つ尻尾の場合、 <code>border</code> の色の値を渡します。 <code>null</code> の場合は尻尾に <code>border</code> は付きません。</li></ul><h3>例 1</h3><h4>sass</h4><div class="highlight sass"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11</pre></td><td class="code"><pre><span class="nc">.div-1</span>
+  <span class="nd">+balloon-tale</span><span class="p">(</span><span class="nb">top</span> <span class="no">red</span> <span class="m">12px</span> <span class="m">16px</span> <span class="m">1px</span><span class="p">)</span>
+
+<span class="nc">.div-2</span>
+  <span class="nd">+balloon-tale</span><span class="p">(</span><span class="nb">top</span> <span class="no">red</span> <span class="m">12px</span> <span class="m">16px</span> <span class="m">1px</span><span class="p">)</span>
+
+<span class="nc">.div-3</span>
+  <span class="nd">+balloon-tale</span><span class="p">(</span><span class="nb">top</span> <span class="no">red</span> <span class="m">12px</span> <span class="m">16px</span> <span class="m">1px</span><span class="p">)</span>
+
+<span class="nc">.div-4</span>
+  <span class="nd">+balloon-tale</span><span class="p">(</span><span class="nb">top</span> <span class="no">red</span> <span class="m">12px</span> <span class="m">16px</span> <span class="m">1px</span><span class="p">)</span>
+</pre></td></tr></tbody></table></div><h4>css</h4><div class="highlight css"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></td><td class="code"><pre><span class="nc">.div-1</span> <span class="p">{</span>
+  <span class="nl">border-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nc">.div-2</span> <span class="p">{</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-left-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-left-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">border-right-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-right-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-right-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-right-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nc">.div-3</span> <span class="p">{</span>
+  <span class="nl">border-top-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-top-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-top-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-top-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-left-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-left-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nc">.div-4</span> <span class="p">{</span>
+  <span class="nl">border-top-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-top-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-top-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-top-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-left-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-left-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="nl">border-right-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+  <span class="nl">border-right-width</span><span class="p">:</span> <span class="m">0</span><span class="p">.</span><span class="n">1rem</span><span class="p">;</span>
+  <span class="nl">border-right-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span>
+  <span class="nl">border-right-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></td></tr></tbody></table></div></div><div class="article__tags"><ul class="article__tags-items"></ul></div></article></main><div class="sub"><nav class="local-nav"><ul class="local-nav__items"><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-rem.html">rem</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-basic-font.html">basic-font</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-resets.html">resets</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-text.html">text</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-position.html">position</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-block.html">block</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-link.html">link</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-border.html">border</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-table.html">table</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-list.html">list</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-overlay.html">overlay</a></li><li class="local-nav__item"><a class="local-nav__link is-current is-en" href="/articles/mixins/mixins-balloon-tail.html">balloon-tail</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-margin-padding.html">margin-padding</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-animation.html">animation</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-grids.html">grids</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-responsive-utilities.html">responsive-utilities</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-background.html">background</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-line.html">line</a></li><li class="local-nav__item"><a class="local-nav__link is-en" href="/articles/mixins/mixins-button.html">button</a></li></ul></nav></div></div></div><footer class="footer" id="footer"><div class="container"><div class="footer__wrapper"><div class="row"><div class="col-sm-8 col-xs-12"></div><div class="col-sm-4 col-xs-12"><div class="footer__about-author"><small class="footer__copyright"><span class="footer__copyright-copy is-en">&copy;</span><span class="footer__copyright-year is-en">2015</span><span class="footer__copyright-author is-en">FJORD LLC.</span><span class="footer__copyright-reserved is-en">All rights reserved.</span></small><nav class="sns-links"><ul class="sns-links__items"><li class="sns-links__item"><a class="sns-links__link" href="https://twitter.com/machida"><i class="fa fa-twitter"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://www.facebook.com/teppeimachida"><i class="fa fa-facebook"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="//www.linkedin.com/pub/teppei-machida/2b/797/7a"><i class="fa fa-linkedin"></i></a></li><li class="sns-links__item"><a class="sns-links__link" href="https://github.com/machida/nolla"><i class="fa fa-github-alt"></i></a></li></ul></nav></div></div></div></div></div></footer></body></html>
