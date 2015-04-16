@@ -1,10 +1,10 @@
 ---
 title: block
-last_update: 2014-10-06
+last_update: 2015-04-16
 category: mixins
 ---
 
-## +size( )
+## +block-size( )
 
 `height` と `width` の値を一行で書くための mixin です。
 
@@ -12,7 +12,7 @@ category: mixins
 
 - 第一引数の一番目に `height` の値、 二番目に `width` の値
 
-を渡します。値が一つしかない場合には `height` と `width` 両方に同じ値を渡します。値の単位が `px` だった場合は、同時に単位 `rem` の値も書き出されます。 
+を渡します。値が一つしかない場合には `height` と `width` 両方に同じ値を渡します。値の単位が `px` だった場合は、同時に単位 `rem` の値も書き出されます。
 
 ### 例
 
@@ -63,7 +63,7 @@ category: mixins
 
 ```sass
 .div
-  +center-block(100px 200px 100) 
+  +center-block(100px 200px 100)
 ```
 
 #### css

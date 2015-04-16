@@ -1,17 +1,18 @@
 ---
-title: table
+title: background
 last_update: 2014-10-06
 category: mixins
 ---
 
-## +border( )
+## +sprite-background( )
 
-同じ `border-style` 、`border-width` 、 `border-color` の `border` を複数の位置（ `top` 、 `right` 、 `bottom` 、 `left` に加え、oulu 独自の位置を指定するワードである、 `all` （上下左右）、  `horizontal` （左右）、 `vertical` （上下）も使えます）に指定するための mixin です。`border-width` の値が単位 `px` の数字だった場合、同時に単位 `rem` の値も書き出されます。
+compass の sprite を使う際に、 `background-repeat` と `background-size` を一行で指定する mixin です。
 
 ### 引数
 
-- 第一引数に `border` の位置のワード（`top` 、 `right` 、 `bottom` 、 `left` に加え、oulu 独自の位置を指定するワードである、 `all` （上下左右）、  `horizontal` （左右）、 `vertical` （上下）も使えます）を渡します。位置のワードは複数渡すことができます。
-- 第二引数に `border-style` 、`border-width` 、 `border-color` の値を渡します。順番は関係なく渡すことができます。
+- 第一引数に画像ファイル名を渡します。その際 `' '`（シングルクオート）でファイル名を囲います。また、ファル名に画像ファイルの拡張子は付けません。デフォルトでは sprite 用の画像ファイルを置く場所は `sprites/` 以下をなります。もし、別の場所をしているする場合は、グローバルな変数 `$sprites-images-directory` を上書きして下さい。
+- 第二引数に `background-size` の値を渡します。
+- 第三引数に `background-repeat` の値を渡します。
 
 ### 例
 
@@ -19,62 +20,51 @@ category: mixins
 
 ```sass
 .div-1
-  +border(all, 1px solid white)
-  
-.div-2
-  +border(horizontal, 1px solid white)
-  
-.div-3
-  +border(top left, 1px solid white)
-  
-.div-4
-  +border(top vertical, 1px solid white)
+  +sprite-background('body', 45px 50px, repeat)
 ```
 
 #### css
 
 ```css
 .div-1 {
-  border-width: 1px;
-  border-width: 0.1rem;
-  border-style: solid;
-  border-color: white;
-  }
-  
-.div-2 {
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  border-right-width: 1px;
-  border-right-width: 0.1rem;
-  border-right-style: solid;
-  border-right-color: white;
-  }
-  
-.div-3 {
-  border-top-width: 1px;
-  border-top-width: 0.1rem;
-  border-top-style: solid;
-  border-top-color: white;
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  }
-  
-.div-4 {
-  border-top-width: 1px;
-  border-top-width: 0.1rem;
-  border-top-style: solid;
-  border-top-color: white;
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  border-right-width: 1px;
-  border-right-width: 0.1rem;
-  border-right-style: solid;
-  border-right-color: white;
+  background-image: url(/sprites-s78b72b8316.png);
+  background-position: 0 0;
+  -moz-background-size: 45px 50px;
+  -o-background-size: 45px 50px;
+  -webkit-background-size: 45px 50px;
+  background-size: 45px 100px;
+  background-repeat: repeat;
   }
 ```
+
+## +bg( )
+
+css の background に関するスタイルを一行で書くための mixin です。
+
+### 引数
+
+- 第一引数に `background-color` 、 `background-image` 、 `background-position` 、  `background-repeat` 、 `background-attachment` 、 `background-size` の値を渡します。これらの値は順番関係なく渡すことができます。`background-size` の値のみ、 oulu 独自のルールで、 `(/ 20px 30px)` のように `/` （スラッシュ）を付ける必要があります。
+ 
+### 例
+
+#### sass
+
+```sasss
++bg(black 'image.png' (left center) no-repeat fixed (/ 20px 30px))
+```
+#### css
+
+
+```css
+div {
+  background-color: black;
+  background-image: url(/images/image.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -moz-background-size: 20px 30px;
+  -o-background-size: 20px 30px;
+  -webkit-background-size: 20px 30px;
+  background-size: 20px 30px;
+}
+````

@@ -1,80 +1,88 @@
 ---
-title: table
+title: list
 last_update: 2014-10-06
 category: mixins
 ---
 
-## +border( )
+## +list( )
 
-同じ `border-style` 、`border-width` 、 `border-color` の `border` を複数の位置（ `top` 、 `right` 、 `bottom` 、 `left` に加え、oulu 独自の位置を指定するワードである、 `all` （上下左右）、  `horizontal` （左右）、 `vertical` （上下）も使えます）に指定するための mixin です。`border-width` の値が単位 `px` の数字だった場合、同時に単位 `rem` の値も書き出されます。
+リストタグ `ol` 、 `ul` と、その中の `li` タグのスタイルを一行で書くための `mixin` です。
 
 ### 引数
 
-- 第一引数に `border` の位置のワード（`top` 、 `right` 、 `bottom` 、 `left` に加え、oulu 独自の位置を指定するワードである、 `all` （上下左右）、  `horizontal` （左右）、 `vertical` （上下）も使えます）を渡します。位置のワードは複数渡すことができます。
-- 第二引数に `border-style` 、`border-width` 、 `border-color` の値を渡します。順番は関係なく渡すことができます。
+- 第一引数にリストの margin の値を渡します。
+  - 1番目の値に `margin-left` の値を渡します。
+  - 2番目の値に `margin-bottom`  の値を渡します。
+- 第二引数に `list_style_type` と `list_style_position` の値をスペース区切りで渡します。順番は関係ありません。第二引数の1番目の値に `fa` という値を渡した場合、 `list_style_type` の記号の代わりに `font-awsome` のアイコンが使われます。
+  - 1番目の値に `fa` という値を渡した場合、 `list_style_type` の記号の代わりに `font-awsome` のアイコンが使われます。
+  - 1番目の値に `fa` という値を渡した場合、2番目の値に `\f192` など `font-awsome` の任意のアイコンの Unicode の値を渡します。
+- 第二引数に `fa` を渡した場合の、アイコンの位置の値を渡します。
+  - 1番目の値にアイコンサイズの値を渡します。
+  - 2番目の値にアイコンの y 軸の位置の値を渡します。
+  - 3番目の値にアイコンの x 軸の位置の値を渡します。
 
-### 例
+### 例 1
 
 #### sass
 
-```sass
-.div-1
-  +border(all, 1px solid white)
-  
-.div-2
-  +border(horizontal, 1px solid white)
-  
-.div-3
-  +border(top left, 1px solid white)
-  
-.div-4
-  +border(top vertical, 1px solid white)
+```sass  
+ol
+  +list(12px 24px, decimal outside)
 ```
 
 #### css
 
 ```css
-.div-1 {
-  border-width: 1px;
-  border-width: 0.1rem;
-  border-style: solid;
-  border-color: white;
-  }
-  
-.div-2 {
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  border-right-width: 1px;
-  border-right-width: 0.1rem;
-  border-right-style: solid;
-  border-right-color: white;
-  }
-  
-.div-3 {
-  border-top-width: 1px;
-  border-top-width: 0.1rem;
-  border-top-style: solid;
-  border-top-color: white;
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  }
-  
-.div-4 {
-  border-top-width: 1px;
-  border-top-width: 0.1rem;
-  border-top-style: solid;
-  border-top-color: white;
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  border-right-width: 1px;
-  border-right-width: 0.1rem;
-  border-right-style: solid;
-  border-right-color: white;
-  }
+ol {
+  margin-left: 12px;
+  margin-left: 1.2rem;
+  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+```
+### 例 2
+
+#### sass
+
+```sass
+ul
+  +list(12px 24px, fa '\f192', 12px 3px 8px)
+```
+
+#### css
+
+```css
+ul {
+  margin-left: 12px;
+  margin-left: 1.2rem;
+  margin-bottom: 24px;
+  margin-bottom: 2.4rem;
+  list-style-type: none;
+}
+ul > li {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  padding-left: 2rem;
+}
+ul > li:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 12px;
+  line-height: 1.2rem;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  top: 0.3rem;
+}
 ```

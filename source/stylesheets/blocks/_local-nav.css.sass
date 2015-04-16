@@ -1,10 +1,16 @@
 .local-nav__link
-  +text-block(18px 32px, $blue-ll right)
-  +padding(right, 32px)
+  +text-block(20px 48px, $blue-ll)
+  +padding(horizontal, 16px)
   +block-link
   +main-font
+  +rem('letter-spacing', 1px)
+  &:hover
+    background-color: $gray-l
   &.is-current
     background-color: $blue-ll
     color: $yellow
     +relative
-    +balloon-tale(right $blue-ll 8px 4px)
+.local-nav__item
+  +border(bottom, 1px solid $gray-l)
+  &:last-child
+    border-bottom: none

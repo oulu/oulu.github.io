@@ -1,5 +1,5 @@
 ---
-title: table
+title: button
 last_update: 2014-10-06
 category: mixins
 ---

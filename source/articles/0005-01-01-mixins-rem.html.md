@@ -1,6 +1,6 @@
 ---
 title: rem
-last_update: 2014-10-06
+last_update: 2015-04-16
 category: mixins
 ---
 
@@ -12,6 +12,7 @@ category: mixins
 
 - 第一引数にプロパティ
 - 第二引数に値（単位 px）
+- 第三引数に `!important` か否か（default は false）
 
 を渡します。
 
@@ -26,7 +27,7 @@ div
   +rem('font-size', 14px)
   +rem('width', 260px)
   +rem('line-height', 18px)
-  +rem('margin', 12px 16px)
+  +rem('margin', 12px 16px, true)
 ```
 
 #### css
@@ -43,8 +44,8 @@ div {
   line-height: 1.8rem;
   line-height: 18px;
 
-  margin: 1.2rem 1.6rem;
-  margin: 12px 16px;
+  margin: 1.2rem 1.6rem !important;
+  margin: 12px 16px !important;
   }
 ```
 
@@ -115,6 +116,3 @@ html
 ```
 $baseline-px: 10px !default
 ```
-
-
-

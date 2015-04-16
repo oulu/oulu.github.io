@@ -1,15 +1,26 @@
 header.header
   .header__header
-    .header__header-wrapper.wrapper
-      = link_to "", class: "header__github-link" do
-        i.fa.fa-github
-      = link_to "", class: "header__version-link is-en" do
+    .header__header-wrapper.container
+      = link_to "https://github.com/oulu/oulu-rails", class: "header__version-link is-en" do
         span.is-label Version
-        span.is-number 0.4.19
+        span.is-number= data.site.version
+      .header__search
+        javascript:
+          (function() {
+            var cx = '010684663886611810229:vtwyrpp5xa0';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//www.google.com/cse/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+          })();
+        gcse:search
   .header__body
-    .wrapper.header__wrapper
+    .container.header__wrapper
       h1.header__site-title
-        = link_to "/", data: {text: "#{data.site.title}"}, class: ("header__site-title-link #{lang_class(data.site.title)} #{text_size(data.site.title)} #{glitch}") do
+        = link_to "/index.html", data: {text: "#{data.site.title}"}, class: ("header__site-title-link #{lang_class(data.site.title)} #{text_size(data.site.title)} #{glitch}") do
           = image_tag('logo.png', class: "header__site-title-logo")
           = data.site.title
       h2.header__site-read-line.is-en A mixin library for Sass.

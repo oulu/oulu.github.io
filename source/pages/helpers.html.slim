@@ -4,7 +4,7 @@ title: Helpers
 
 ul.articles
   - blog.articles.sort_by(&:date).each do |article|
-    - if article.data.category == ('mixins')
+    - if article.data.category == ('helpers')
       li.articles-article
         h2.articles-article__title
           = link_to article.data.title, article, class: "articles-article__title-link #{lang_class(article.data.title)}"

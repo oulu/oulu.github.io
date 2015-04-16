@@ -1,17 +1,17 @@
 ---
-title: table
-last_update: 2014-10-06
+title: overlay
+last_update: 2015-04-16
 category: mixins
 ---
 
-## +border( )
+## +overlay( )
 
-同じ `border-style` 、`border-width` 、 `border-color` の `border` を複数の位置（ `top` 、 `right` 、 `bottom` 、 `left` に加え、oulu 独自の位置を指定するワードである、 `all` （上下左右）、  `horizontal` （左右）、 `vertical` （上下）も使えます）に指定するための mixin です。`border-width` の値が単位 `px` の数字だった場合、同時に単位 `rem` の値も書き出されます。
+画面全体に被せるレイヤー（modal windo が開いたときの背景など）を一行で書くための mixin です。
 
 ### 引数
 
-- 第一引数に `border` の位置のワード（`top` 、 `right` 、 `bottom` 、 `left` に加え、oulu 独自の位置を指定するワードである、 `all` （上下左右）、  `horizontal` （左右）、 `vertical` （上下）も使えます）を渡します。位置のワードは複数渡すことができます。
-- 第二引数に `border-style` 、`border-width` 、 `border-color` の値を渡します。順番は関係なく渡すことができます。
+- 第一引数に overlay の色の値を渡します。この場合、アルファ値が 1 以下の色（不透明度が 0 ではない色）を渡した場合は、アルファ値が 1 以下の色が表示できないレガシーなブラウザのために png ファイルも書き出されます。
+- 第二引数に overlay の `z-index` の値を渡します。デフォルトの値は2です。
 
 ### 例
 
@@ -19,62 +19,18 @@ category: mixins
 
 ```sass
 .div-1
-  +border(all, 1px solid white)
-  
-.div-2
-  +border(horizontal, 1px solid white)
-  
-.div-3
-  +border(top left, 1px solid white)
-  
-.div-4
-  +border(top vertical, 1px solid white)
+  +overlay(rgba(black, .4), 10)
 ```
 
 #### css
 
 ```css
 .div-1 {
-  border-width: 1px;
-  border-width: 0.1rem;
-  border-style: solid;
-  border-color: white;
-  }
-  
-.div-2 {
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  border-right-width: 1px;
-  border-right-width: 0.1rem;
-  border-right-style: solid;
-  border-right-color: white;
-  }
-  
-.div-3 {
-  border-top-width: 1px;
-  border-top-width: 0.1rem;
-  border-top-style: solid;
-  border-top-color: white;
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  }
-  
-.div-4 {
-  border-top-width: 1px;
-  border-top-width: 0.1rem;
-  border-top-style: solid;
-  border-top-color: white;
-  border-left-width: 1px;
-  border-left-width: 0.1rem;
-  border-left-style: solid;
-  border-left-color: white;
-  border-right-width: 1px;
-  border-right-width: 0.1rem;
-  border-right-style: solid;
-  border-right-color: white;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  background: ;
   }
 ```

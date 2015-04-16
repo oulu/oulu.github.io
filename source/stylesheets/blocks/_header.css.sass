@@ -1,7 +1,6 @@
 body
-  overflow-x: hidden
-  width: 100%
-  +transition(.1s)
+  a
+    +transition(.1s)
   &.is-slided
     +rem('margin-left', 300px)
     overflow: hidden
@@ -22,12 +21,15 @@ body
   +rem('height', 40px)
 .header__header-wrapper
   +relative
+.header__search
+  +rem('width', 360px)
+  +inline-block(top)
+  +absolute(right 0, top 5px)
 .header__version-link
   +text-block(14px 40px, rgba($text-color, .6))
   text-decoration: none
-  +inline-block
+  +inline-block(top)
   +top(4px)
-  +rem('padding-left', 36px)
   +main-font
   &:hover
     color: $text-color
@@ -86,17 +88,3 @@ body
   +text-block(12px 1, rgba($text-color, .4) center)
   display: block
   +main-font
-
-.header__github-link
-  $size: 56px
-  $motion-size: 16px
-  +block-link
-  background-color: $blue-ll
-  +text-block(36px $size, center $main-color)
-  +absolute(right 0, top $motion-size*-1)
-  +rem('width', $size)
-  +rem('padding-top', $motion-size)
-  &:hover
-    top: 0px
-  &:active
-    +rem('top', $motion-size*-1)

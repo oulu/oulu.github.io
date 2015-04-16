@@ -1,24 +1,6 @@
-PATH
-  remote: ../middleman-oulu
-  specs:
-    middleman-oulu (0.5.14)
-      SassyLists
-      bundler (~> 1.3)
-      ceaser-easing
-      compass (~> 1.0.1)
-      compass-rgbapng
-      modular-scale
-      oily_png
-      rake
-      sass (~> 3.4.5)
-      sassy-maps
-      toolkit
-
 GEM
   remote: http://rubygems.org/
   specs:
-    SassyLists (2.2.4)
-      sass (~> 3.3)
     activesupport (4.1.7)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -26,9 +8,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
-    ceaser-easing (0.7)
-      compass (>= 0.12.2)
-      rake
+    bourbon (4.2.2)
+      sass (~> 3.4)
+      thor
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.3)
@@ -48,9 +30,6 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    compass-rgbapng (0.2.1)
-      chunky_png (>= 0.8.0)
-      compass (>= 0.10.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -112,6 +91,11 @@ GEM
     middleman-minify-html (3.4.0)
       htmlcompressor (~> 0.1.0)
       middleman-core (>= 3.2)
+    middleman-oulu (0.6.10)
+      bourbon
+      bundler (~> 1.3)
+      rake
+      sass (~> 3.4.5)
     middleman-sprockets (3.3.10)
       middleman-core (~> 3.3)
       sprockets (~> 2.12.1)
@@ -121,14 +105,10 @@ GEM
       middleman-core (~> 3.2)
       rouge (~> 1.0)
     minitest (5.4.2)
-    modular-scale (2.0.5)
-      compass (>= 0.12.0)
     multi_json (1.10.1)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    oily_png (1.1.2)
-      chunky_png (~> 1.3.1)
     padrino-helpers (0.12.4)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.12.4)
@@ -141,15 +121,13 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.4.0)
+    rake (10.4.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.1.2)
     rouge (1.7.2)
-    sass (3.4.9)
-    sassy-maps (0.4.0)
-      sass (~> 3.3)
+    sass (3.4.13)
     slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -169,8 +147,6 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
-    toolkit (2.6.0)
-      sass (~> 3.3)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uber (0.0.10)
@@ -188,7 +164,7 @@ DEPENDENCIES
   middleman-deploy
   middleman-livereload (~> 3.1.0)
   middleman-minify-html
-  middleman-oulu!
+  middleman-oulu
   middleman-syntax
   redcarpet
   slim

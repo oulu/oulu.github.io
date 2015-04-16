@@ -5,7 +5,6 @@ title: Install
 ## 環境
 
 - sass 3.4 以上
-- compass 1.0.0 以上
 
 ## Gemfile
 
@@ -14,8 +13,6 @@ title: Install
 Gemfile に以下を記入して、
 
 ```ruby
-gem 'compass-rails'
-gem 'modular-scale'
 gem 'oulu-rails'
 ```
 
