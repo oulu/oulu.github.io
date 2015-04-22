@@ -6,16 +6,15 @@
     .is-bold-ja
       +bold-ja
 .article__header
-  +rem('margin-bottom', 16px)
-  +top(-8px)
-  +border(bottom, 2px solid rgba(255, 255, 255, .2))
+  background-color: $yellow
+.article__header-container
+  +relative
+  +rem('padding-left', $sub-width + 32px)
 .article__title
-  +text-block(48px 1.3, bold #97EBFA)
-  +rem('letter-spacing', 1px)
+  +text-block(42px 72px, $reverse-text-color)
+  +main-bold-font
   +screen-xs
     +text-block(20px 1.3 16px, bold)
-    +rem('padding-bottom', 6px)
-    +border(bottom, 1px solid $text-color)
 .article__title-link
   text-decoration: none
   +main-bold-font
@@ -24,17 +23,20 @@
     color: $article-link-color
 .article__last-update
   display: block
-  +text-block(14px 1, $fix-text-color center)
+  +text-block(16px 32px, $main-color)
   white-space: nowrap
   +box-sizing(border-box)
   +date-font
-  +absolute(right 0, bottom 12px)
+  +rem('margin-bottom', 24px)
+  background-color: #E8CF6F
   +screen-xs
     +inline-block(bottom)
     +text-block(12px 1 16px)
     +rem('padding', 3px 6px)
   .is-label
     +rem('margin-right', 8px)
+.article__last-update-container
+  +rem('padding-left', $sub-width + 32px)
 .article__tags-item
   display: block
   +screen-xs
@@ -57,8 +59,10 @@
     +fa
     content: "\f02b"
     +rem('margin-right', 6px)
-
-.article__body
+.article__body-container
+  .sample
+    +link-colors(blue, red, green, orange, gray)
+  +rem('padding-left', $sub-width + 32px)
   +rem('margin-bottom', 80px)
   color: shade($text-color, 6%)
   +screen-xs
@@ -74,7 +78,7 @@
     color: $text-color
     +cousine
   .highlight
-    +border-right-radius(4px)
+    +border-radius(right, 4px)
     +relative(2)
     +cousine
     @if $syntax-heighlight-color
@@ -144,26 +148,27 @@
         +text-block(14px 22px)
         +block-size(22px)
   h2
-    +text-block(30px 1.3 .8em, $blue bold)
-    +rem('letter-spacing', 1px)
-    +rem('padding-bottom', 12px)
+    +text-block(32px 1.3 .8em, $blue bold)
+    +rem('padding-bottom', 6px)
     +rem('margin-top', 48px)
+    +pt-sans(700)
     +relative
     &:first-child
       margin-top: 0
     +screen-xs
       +text-block(20px 1.3em, bold)
     &:before
-      background-color: rgba(0, 0, 0, .06)
-      +rem('height', 6px)
+      background-color: #E2E2E2
+      +rem('height', 4px)
+      +box-shadow(rgba(black, .2) 0 4px 0)
       content: ""
       display: block
       +absolute(left 0, bottom 0)
       width: 100%
   h3
     +text-block(22px 1.3 .8em, bold)
-    +border(bottom, 1px dotted rgba(0, 0, 0, .2))
-    +rem('padding-bottom', 8px)
+    +border(bottom, 2px dotted rgba(0, 0, 0, .2))
+    +rem('padding-bottom', 4px)
     +screen-xs
       +text-block(18px 1.3em, bold)
   h4

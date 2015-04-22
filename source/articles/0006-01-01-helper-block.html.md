@@ -1,8 +1,11 @@
 ---
-title: Sample post
-last_update: 2014-10-06
-tags: misc
+title: block
+last_update: 2015-04-22
 category: helpers
 ---
 
-それは黄金の昼下がり気ままにただようぼくらオールは二本ともあぶなげに小さな腕で漕がれ小さな手がぼくらのただよいを導こうとかっこうだけ申し訳につけてああ残酷な三人！こんな時間にこんな夢見る天気のもとで
+## .has-no-gutter-grids
+
+`.has-no-gutter-grids` を親に持つ `grids column` の `$gutter-width` が `0` になります。
+
+## .is-horizontal-center-block

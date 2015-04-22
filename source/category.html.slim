@@ -2,6 +2,19 @@
 pageable: true
 per_page: 20
 ---
-ul.articles
-  - page_articles.each_with_index do |article, i|
-    = partial("partials/articles_article", locals: {article: article})
+.container.has-no-gutter-grids
+  .row
+    .col-sm-4
+      ul.articles
+        - page_articles.each_with_index do |article, i|
+          li.articles-article
+            = link_to article, class: "articles-article__link #{is_current_page?(article.url)}" do
+              span.row
+                span.col-xs-6
+                  span.articles-article__title class="#{lang_class(article.data.title)}"
+                    = article.data.title
+                - if article.data.last_update
+                  span.col-xs-6
+                    span.articles-article__update-at.is-en
+                      span.is-label last update
+                      span.is-date= article.data.last_update.strftime('%Y/%m/%d')

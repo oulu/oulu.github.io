@@ -1,0 +1,37 @@
+---
+title: Buttons
+---
+header.page-header
+  .page-header__container.container
+    h1.page-header__title Buttons
+
+.dev
+  .container.dev__container
+    - sizes = ["xs", "sm", "md", "lg", "xl"]
+    - for size in sizes
+      section.dev-section
+        h2.dev-section__title
+          | size-
+          = size
+        .row
+          - styles = ["normal", "border", "flat-emboss", "material"]
+          - for style in styles
+            .col-sm-4
+              h3.dev-section__sub-title= style
+              - colors = ["default", "primary", "success", "warning", "danger"]
+              - for color in colors
+                .dev-buttons.is-margin-bottom-16
+                  h4.dev-section__sub-sub-title= color
+                  ul.dev-buttons__items
+                    li.dev-buttons__item
+                      a class="is-button-#{style}-#{size}-#{color} #{style == 'material' ? 'waves-effect' : ''}"
+                        i.fa.fa-heart
+                        | リンク
+                    li.dev-buttons__item
+                      button class="is-button-#{style}-#{size}-#{color} #{style == 'material' ? 'waves-effect' : ''}"
+                        i.fa.fa-heart
+                        | ボタン
+                    li.dev-buttons__item
+                      span class="is-button-#{style}-#{size}-#{color} is-input-container #{style == 'material' ? 'waves-effect' : ''}"
+                        i.fa.fa-heart
+                        input type="submit" value="インプット"

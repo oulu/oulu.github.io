@@ -1,19 +1,9 @@
-$sub-width: 200px
-
 *::selection
   background: $fix-text-color
   color: $base-color
 *::-moz-selection
   background: $fix-text-color
   color: $base-color
-
-.container
-  +rem('max-width', $wrapper-max-width)
-  +box-sizing(border-box)
-  +margin(horizontal, auto)
-  +padding(horizontal, $wrapper-padding)
-  clear: both
-
 body
   +rem('font-size', 16px)
   color: $fix-text-color
@@ -22,9 +12,6 @@ body
     +transition(.2s)
 .body
   +relative
-.main
-  &.has-local-nav
-    +rem('padding-left', $sub-width + 48px)
 .sub
   +rem('width', $sub-width)
   +absolute(left 0, top 0)

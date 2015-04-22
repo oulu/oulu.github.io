@@ -1,16 +1,18 @@
+.local-nav
+  background-color: #9B9A97
 .local-nav__link
-  +text-block(20px 48px, $blue-ll)
+  +text-block(20px 47px, $white)
   +padding(horizontal, 16px)
   +block-link
-  +main-font
-  +rem('letter-spacing', 1px)
+  +main-bold-font
   &:hover
     background-color: $gray-l
+    color: $main-color
   &.is-current
-    background-color: $blue-ll
+    background-color: $main-color
     color: $yellow
     +relative
 .local-nav__item
-  +border(bottom, 1px solid $gray-l)
+  +border(bottom, 1px solid #B6B3AA)
   &:last-child
     border-bottom: none

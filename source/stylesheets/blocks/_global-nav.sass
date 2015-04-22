@@ -1,6 +1,6 @@
 .global-nav
   +rem('padding-top', 10px)
-  background-color: $blue-ll
+  background-color: $main-color
   &.is-index
     padding-top: 0
     +rem('margin-bottom', 72px)
@@ -20,7 +20,7 @@
 .global-nav__site-title-link
   +block-link
   +text-block(32px 54px 0, $reverse-text-color)
-  +main-font
+  +main-bold-font
   +rem('padding-left', 28px)
   +rem('letter-spacing', 1px)
   .is-image
@@ -37,16 +37,16 @@
   +inline-block(bottom)
 .global-nav__link
   +block-link
-  +text-block(18px 48px 0, rgba($reverse-text-color, .4))
+  +text-block(20px 48px 0, rgba($reverse-text-color, .4))
   +padding(horizontal, 18px)
   +box-sizing(border-box)
-  +main-font
+  +main-bold-font
   +rem('letter-spacing', 1px)
   &:hover
     color: $reverse-text-color
   &.is-current
     color: $yellow
     +relative
-    +balloon-tail(top $main-color 6px 8px)
+    +balloon-tail(top $blue-ll 10px 12px)
     &:before
       +rem('bottom', -1px)

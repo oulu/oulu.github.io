@@ -1,0 +1,23 @@
+.articles-article
+  display: block
+  &:nth-child(even)
+    .articles-article__link
+      background-color: shade(#9B9A97, 10%)
+.articles-article__link
+  +block-link
+  background-color: #9B9A97
+  +padding(vertical, 6px 8px)
+  +padding(horizontal, 16px)
+  >span
+    display: block
+    vertical-align: bottom
+.articles-article__title
+  +text-block(24px 44px, $white)
+  +main-bold-font
+  display: block
+.articles-article__update-at
+  +main-font
+  display: block
+  +text-block(16px 44px, shade($white, 10%) right)
+  .is-label
+    +rem('margin-right', 8px)

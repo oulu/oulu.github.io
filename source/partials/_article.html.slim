@@ -1,16 +1,19 @@
 article.article
   .article__header
-    h1.article__title= link_to article.title, article, class: "article__title-link #{lang_class(article.title)}"
-    - if article.data.last_update
-      p.article__last-update.is-en
+    .article__header-container.container
+      h1.article__title= link_to article.title, article, class: "article__title-link #{lang_class(article.title)}"
+      - if article.data.last_update
+    time.article__last-update.is-en
+      .article__last-update-container.container
         span.is-label last update
         span.is-date= article.data.last_update.strftime('%Y/%m/%d')
   .article__body
-    = article.body
-  - if data.site.disqus
-    = partial('partials/disqus')
-  .article__tags
-    ul.article__tags-items
-      - article.tags.each do |tag|
-        li.article__tags-item
-          = link_to tag, tag_path(tag), class: "article__tags-link #{lang_class(tag)}"
+    .article__body-container.container
+      = article.body
+      - if data.site.disqus
+        = partial('partials/disqus')
+      .article__tags
+        ul.article__tags-items
+          - article.tags.each do |tag|
+            li.article__tags-item
+              = link_to tag, tag_path(tag), class: "article__tags-link #{lang_class(tag)}"

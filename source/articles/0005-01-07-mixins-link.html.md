@@ -4,6 +4,43 @@ last_update: 2015-04-16
 category: mixins
 ---
 
+## +link-colors()
+
+リンクの `link`、`hover`、`active`、`visited`, `focus` それぞれの状態での `color` を一行で書くための mixin です。
+
+### 引数
+
+- 第一引数 `link` 時の色を渡します
+- 第二引数 `hover` 時の色を渡します
+- 第三引数 `active` 時の色を渡します
+- 第四引数 `visited` 時の色を渡します
+- 第五引数 `focus` 時の色を渡します
+
+### 例
+
+```sass
+a
+  +link-colors(blue, red, green, orange, gray)
+```
+
+```css
+a {
+color: blue;
+}
+a:visited {
+  color: orange;
+}
+a:focus {
+  color: gray;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: green;
+}
+```
+
 ## +block-link
 
 `display: block` と `text-decoration: none` を一行で書くための mixin です。ボタンの見た目のリンクなどに使うことを想定しています。
@@ -16,12 +53,6 @@ category: mixins
 ```sass
 a
   +block-link
-  width: 100px
-  font-size: 12px
-  text-align: center
-  line-height: 30px
-  color: white;
-  background-color: red
 ```
 
 #### css
@@ -30,13 +61,7 @@ a
 a {
   display: block;
   text-decoration: none;
-  width: 100px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 30px;
-  color: white;
-  background-color: red;
-  }
+}
 ```
 
 ## +inline-block-link
@@ -50,13 +75,7 @@ a {
 
 ```sass
 a
-  +block-link
-  width: 100px
-  font-size: 12px
-  text-align: center
-  line-height: 30px
-  color: white;
-  background-color: red
+  +inline-block-link
 ```
 
 #### css
@@ -65,13 +84,7 @@ a
 a {
   display: inline-block;
   text-decoration: none;
-  width: 100px;
-  font-size: 12px;
-  text-align: center;
-  line-height: 30px;
-  color: white;
-  background-color: red;
-  }
+}
 ```
 
 ## +hover-link( )

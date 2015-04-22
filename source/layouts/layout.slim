@@ -15,20 +15,42 @@ html
             h1.title__title class="#{lang_class(category)}" = category.capitalize
           - elsif current_article
             h1.title__title class="#{lang_class(current_article.data.category)}" = current_article.data.category.capitalize
-    .container
-      .body
-        main.main class=(local_nav? ? 'has-local-nav':'')
-          - if page? and not category?
-            article.article.is-page
-              div class=(nav_page? ? 'nav-page__body':'article__body')
-                = yield
-          - elsif not articles?
-            = partial("partials/article", locals: {article: current_article})
-          - else
-            = yield
-        - if local_nav?
-          .sub
-            nav.local-nav
-              ul.local-nav__items
-                = partial("partials/local_nav")
+    .body
+      main.main class=(local_nav? ? 'has-local-nav':'')
+        - if page? and not category?
+          article.article.is-page
+            div class=(nav_page? ? 'nav-page__body':'article__body')
+              = yield
+        - elsif not articles?
+          - article = current_article
+          article.article
+            .article__header
+              .article__header-container.container
+                h1.article__title= link_to article.title, article, class: "article__title-link #{lang_class(article.title)}"
+                - if local_nav?
+                  .sub
+                    nav.local-nav
+                      ul.local-nav__items
+                        = partial("partials/local_nav")
+            - if article.data.last_update
+              time.article__last-update.is-en
+                .article__last-update-container.container
+                  span.is-label last update
+                  span.is-date= article.data.last_update.strftime('%Y/%m/%d')
+
+            .article__body
+              .article__body-container.container
+                = article.body
+                - if data.site.disqus
+                  = partial('partials/disqus')
+                .article__tags
+                  ul.article__tags-items
+                    - article.tags.each do |tag|
+                      li.article__tags-item
+                        = link_to tag, tag_path(tag), class: "article__tags-link #{lang_class(tag)}"
+          //= partial("partials/article", locals: {article: current_article})
+
+        - else
+          = yield
+
     = partial 'partials/footer'

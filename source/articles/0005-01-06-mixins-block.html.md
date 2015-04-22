@@ -1,18 +1,18 @@
 ---
 title: block
-last_update: 2015-04-16
+last_update: 2015-04-22
 category: mixins
 ---
 
 ## +block-size( )
 
-`height` と `width` の値を一行で書くための mixin です。
+ `width` と `height` の値を一行で書くための mixin です。
 
 ### 引数
 
-- 第一引数の一番目に `height` の値、 二番目に `width` の値
+- 第一引数の一番目に `width` の値、 二番目に `height` の値
 
-を渡します。値が一つしかない場合には `height` と `width` 両方に同じ値を渡します。値の単位が `px` だった場合は、同時に単位 `rem` の値も書き出されます。
+を渡します。値が一つしかない場合には `width` と `height`  両方に同じ値を渡します。値の単位が `px` だった場合は、同時に単位 `rem` の値も書き出されます。
 
 ### 例
 
@@ -51,11 +51,13 @@ category: mixins
 ### 引数
 
 - 第一引数
-  - 一番目の値にブロックの `height` の値
-  - 二番目の値にブロックの `width` の値
-  - 二番目の値にブロックの `z-index` の値
+  - 一番目の値にブロックの `width` の値
+  - 二番目の値にブロックの `height` の値
+- 第二引数
+  - `z-index` の値
 
-を渡します。`height` 、`width` の値の単位が `px` だった場合は、 単位 `rem` の値も同時に書き出されます。
+を渡します。`width` 、`height` の値の単位が `px` だった場合は、 単位 `rem` の値も同時に書き出されます。
+第一引数に渡された値が一つしかない場合には `width` と `height`  両方に同じ値を渡します。
 
 ### 例
 
@@ -63,7 +65,7 @@ category: mixins
 
 ```sass
 .div
-  +center-block(100px 200px 100)
+  +center-block(100px 200px, 100)
 ```
 
 #### css
@@ -81,5 +83,6 @@ category: mixins
   mergin-top: -10rem;
   mergin-left: -50px;
   mergin-left: -5rem;
+  z-index: 100
 }
 ```
